@@ -224,8 +224,17 @@ nav ul li a:hover {
 }
 
 .menu-item p {
-    padding: 0 15px 20px;
+    padding: 0 15px 5px;
+    margin: 0 0 5px 0;
+}
+
+.menu-item .price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    padding: 0 15px 15px;
     margin: 0 0 15px 0;
+    border-bottom: 1px dashed #ddd;
 }
 
 /* Style des boutons Découvrir */

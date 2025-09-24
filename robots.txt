@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.glacesitaliennes71.com/sitemap.xml
+
+# Désactiver l'exploration des dossiers sensibles
+Disallow: /admin/
+Disallow: /includes/
+Disallow: /config/
+
+# Paramètres d'URL à ignorer
+Disallow: *?*
+
+# Fichiers à ignorer
+Disallow: /*.css$
+Disallow: /*.js$
+Disallow: /*.png$
+Disallow: /*.jpg$
+Disallow: /*.jpeg$
+Disallow: /*.gif$

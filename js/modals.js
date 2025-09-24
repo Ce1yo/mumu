@@ -3,208 +3,208 @@ const productsData = {
     // Goûts de granité
     'granite-barbe-a-papa': {
         title: 'Barbe à Papa',
-        price: '3,50 €',
+        price: '19,90 € HT',
         image: 'images/Gouts granite/1 baniere granité barbe a papa.png',
         description: 'Un délicieux granité au goût de barbe à papa, doux et sucré comme à la fête foraine. Parfait pour les amateurs de saveurs sucrées et régressives.',
         specs: [
             { name: 'Type', value: 'Sucré' },
             { name: 'Allergènes', value: 'Sans allergènes majeurs' },
-            { name: 'Végétarien', value: 'Oui' },
+            { name: 'Quantité', value: '2L' },
             { name: 'Végan', value: 'Oui' },
             { name: 'Sans gluten', value: 'Oui' }
         ]
     },
     'granite-citron': {
         title: 'Citron',
-        price: '3,50 €',
+        price: '19,90 € HT',
         image: 'images/Gouts granite/2 baniere granité citron.png',
         description: 'Un granité acidulé et rafraîchissant au goût de citron jaune pressé. Idéal pour se désaltérer lors des chaudes journées d\'été.',
         specs: [
             { name: 'Type', value: 'Acidulé' },
             { name: 'Allergènes', value: 'Sans allergènes majeurs' },
-            { name: 'Végétarien', value: 'Oui' },
+            { name: 'Quantité', value: '2L' },
             { name: 'Végan', value: 'Oui' },
             { name: 'Sans gluten', value: 'Oui' }
         ]
     },
     'granite-fraise': {
         title: 'Fraise',
-        price: '3,50 €',
+        price: '19,90 € HT',
         image: 'images/Gouts granite/3 baniere granité fraise.png',
         description: 'Un granité doux et fruité au goût de fraise fraîche. Un classique apprécié des petits et des grands.',
         specs: [
             { name: 'Type', value: 'Fruité' },
             { name: 'Allergènes', value: 'Sans allergènes majeurs' },
-            { name: 'Végétarien', value: 'Oui' },
+            { name: 'Quantité', value: '2L' },
             { name: 'Végan', value: 'Oui' },
             { name: 'Sans gluten', value: 'Oui' }
         ]
     },
     'granite-kiwi-banane': {
         title: 'Kiwi Banane',
-        price: '3,80 €',
+        price: '19,90 € HT',
         image: 'images/Gouts granite/4 baniere granité kiwi banane.png',
         description: 'Un savoureux mélange exotique de kiwi et de banane, équilibré entre acidité et douceur.',
         specs: [
             { name: 'Type', value: 'Exotique' },
             { name: 'Allergènes', value: 'Sans allergènes majeurs' },
-            { name: 'Végétarien', value: 'Oui' },
+            { name: 'Quantité', value: '2L' },
             { name: 'Végan', value: 'Oui' },
             { name: 'Sans gluten', value: 'Oui' }
         ]
     },
     'granite-cola': {
         title: 'Cola',
-        price: '3,50 €',
+        price: '19,90 € HT',
         image: 'images/Gouts granite/5 baniere granité cola.png',
         description: 'Un granité au goût de cola classique, pétillant et rafraîchissant. Un incontournable pour les amateurs de saveurs familières.',
         specs: [
             { name: 'Type', value: 'Classique' },
             { name: 'Caféine', value: 'Oui' },
-            { name: 'Végétarien', value: 'Oui' },
+            { name: 'Quantité', value: '2L' },
             { name: 'Végan', value: 'Oui' },
             { name: 'Sans gluten', value: 'Oui' }
         ]
     },
     'granite-mangue': {
         title: 'Mangue',
-        price: '3,80 €',
+        price: '19,90 € HT',
         image: 'images/Gouts granite/6 baniere granité mangue.png',
         description: 'Un granité exotique et sucré au goût de mangue mûre. Un voyage gustatif sous les tropiques.',
         specs: [
             { name: 'Type', value: 'Exotique' },
             { name: 'Allergènes', value: 'Sans allergènes majeurs' },
-            { name: 'Végétarien', value: 'Oui' },
+            { name: 'Quantité', value: '2L' },
             { name: 'Végan', value: 'Oui' },
             { name: 'Sans gluten', value: 'Oui' }
         ]
     },
     'granite-mangue-goyave': {
         title: 'Mangue Goyave',
-        price: '3,90 €',
+        price: '19,90 € HT',
         image: 'images/Gouts granite/7 naniere granité mangue goyave.png',
         description: 'Un délicieux mélange tropical de mangue et de goyave, à la fois doux et légèrement acidulé.',
         specs: [
             { name: 'Type', value: 'Tropical' },
             { name: 'Allergènes', value: 'Sans allergènes majeurs' },
-            { name: 'Végétarien', value: 'Oui' },
+            { name: 'Quantité', value: '2L' },
             { name: 'Végan', value: 'Oui' },
             { name: 'Sans gluten', value: 'Oui' }
         ]
     },
     'granite-melon': {
         title: 'Melon',
-        price: '3,70 €',
+        price: '19,90 € HT',
         image: 'images/Gouts granite/8 baniere granité melon.png',
         description: 'Un granité doux et désaltérant au goût de melon frais. Parfait pour un moment de fraîcheur estivale.',
         specs: [
             { name: 'Type', value: 'Fruité' },
             { name: 'Allergènes', value: 'Sans allergènes majeurs' },
-            { name: 'Végétarien', value: 'Oui' },
+            { name: 'Quantité', value: '2L' },
             { name: 'Végan', value: 'Oui' },
             { name: 'Sans gluten', value: 'Oui' }
         ]
     },
     'granite-melon-mangue': {
         title: 'Melon Mangue',
-        price: '3,90 €',
+        price: '19,90 € HT',
         image: 'images/Gouts granite/9 baniere granité melon mangue.png',
         description: 'Une harmonie parfaite entre la douceur du melon et l\'exotisme de la mangue pour un granité rafraîchissant et savoureux.',
         specs: [
             { name: 'Type', value: 'Fruité' },
             { name: 'Allergènes', value: 'Sans allergènes majeurs' },
-            { name: 'Végétarien', value: 'Oui' },
+            { name: 'Quantité', value: '2L' },
             { name: 'Végan', value: 'Oui' },
             { name: 'Sans gluten', value: 'Oui' }
         ]
     },
     'granite-orange-sanguine': {
         title: 'Orange Sanguine',
-        price: '3,60 €',
+        price: '19,90 € HT',
         image: 'images/Gouts granite/10 baniere granité orange sanguine.png',
         description: 'Un granité à l\'orange sanguine, doux avec une légère touche acidulée. Une explosion de fraîcheur en bouche.',
         specs: [
             { name: 'Type', value: 'Agrume' },
             { name: 'Allergènes', value: 'Agrumes' },
-            { name: 'Végétarien', value: 'Oui' },
+            { name: 'Quantité', value: '2L' },
             { name: 'Végan', value: 'Oui' },
             { name: 'Sans gluten', value: 'Oui' }
         ]
     },
     'granite-fruit-passion': {
         title: 'Fruit de la Passion',
-        price: '3,80 €',
+        price: '19,90 € HT',
         image: 'images/Gouts granite/11 baniere granité passion.png',
         description: 'Un granité intense et acidulé au fruit de la passion, pour les amateurs de saveurs exotiques et marquées.',
         specs: [
             { name: 'Type', value: 'Acidulé' },
             { name: 'Allergènes', value: 'Sans allergènes majeurs' },
-            { name: 'Végétarien', value: 'Oui' },
+            { name: 'Quantité', value: '2L' },
             { name: 'Végan', value: 'Oui' },
             { name: 'Sans gluten', value: 'Oui' }
         ]
     },
     'granite-pasteque': {
         title: 'Pastèque',
-        price: '3,50 €',
+        price: '19,90 € HT',
         image: 'images/Gouts granite/12 baniere granité pasteque.png',
         description: 'Un granité léger et rafraîchissant au goût de pastèque, idéal pour se désaltérer tout en douceur.',
         specs: [
             { name: 'Type', value: 'Léger' },
             { name: 'Allergènes', value: 'Sans allergènes majeurs' },
-            { name: 'Végétarien', value: 'Oui' },
+            { name: 'Quantité', value: '2L' },
             { name: 'Végan', value: 'Oui' },
             { name: 'Sans gluten', value: 'Oui' }
         ]
     },
     'granite-pomme-verte': {
         title: 'Pomme Verte',
-        price: '3,50 €',
+        price: '19,90 € HT',
         image: 'images/Gouts granite/13 baniere granité pomme verte.png',
         description: 'Un granité à la pomme verte, frais et légèrement acidulé. Une touche de fraîcheur garantie à chaque dégustation.',
         specs: [
             { name: 'Type', value: 'Frais' },
             { name: 'Allergènes', value: 'Sans allergènes majeurs' },
-            { name: 'Végétarien', value: 'Oui' },
+            { name: 'Quantité', value: '2L' },
             { name: 'Végan', value: 'Oui' },
             { name: 'Sans gluten', value: 'Oui' }
         ]
     },
     'granite-the-peche': {
         title: 'Thé Pêche',
-        price: '3,70 €',
+        price: '19,90 € HT',
         image: 'images/Gouts granite/14 baniere granité thé peche.png',
         description: 'Un délicat mélange de thé léger et de pêche mûre pour un granité subtil et parfumé. Parfait pour les amateurs de saveurs raffinées.',
         specs: [
             { name: 'Type', value: 'Parfumé' },
             { name: 'Théine', value: 'Oui' },
-            { name: 'Végétarien', value: 'Oui' },
+            { name: 'Quantité', value: '2L' },
             { name: 'Végan', value: 'Oui' },
             { name: 'Sans gluten', value: 'Oui' }
         ]
     },
     'granite-tropical-bleu': {
         title: 'Tropical Bleu',
-        price: '3,90 €',
+        price: '19,90 € HT',
         image: 'images/Gouts granite/15 baniere granité tropical bleue.png',
         description: 'Un mélange exotique et surprenant de fruits tropicaux avec une touche de fruit de la passion. Sa couleur bleue en fait une expérience à la fois visuelle et gustative unique.',
         specs: [
             { name: 'Type', value: 'Exotique' },
             { name: 'Couleur', value: 'Bleu naturel' },
-            { name: 'Végétarien', value: 'Oui' },
+            { name: 'Quantité', value: '2L' },
             { name: 'Végan', value: 'Oui' },
             { name: 'Sans gluten', value: 'Oui' }
         ]
     },
     'granite-menthe-verte': {
         title: 'Menthe Verte',
-        price: '3,50 €',
+        price: '19,90 € HT',
         image: 'images/Gouts granite/16 baniere granité menthe verte.png',
         description: 'Une explosion de fraîcheur avec ce granité à la menthe verte. Idéal pour se rafraîchir après un repas ou simplement pour le plaisir d\'une note mentholée intense.',
         specs: [
             { name: 'Type', value: 'Rafraîchissant' },
             { name: 'Mentholé', value: 'Oui' },
-            { name: 'Végétarien', value: 'Oui' },
+            { name: 'Quantité', value: '2L' },
             { name: 'Végan', value: 'Oui' },
             { name: 'Sans gluten', value: 'Oui' }
         ]
@@ -371,36 +371,36 @@ const productsData = {
     // Goûts de glace
     'glace-vanille': {
         title: 'Glace à la Vanille',
-        price: '5,90 € / litre',
+        price: '19,90 € HT',
         image: 'images/Glaces/vanille.jpg',
         description: 'Notre glace à la vanille est préparée avec de la vraie gousse de vanille de Madagascar pour un goût authentique et onctueux.',
         specs: [
             { name: 'Allergènes', value: 'Lait, œufs, sucre' },
-            { name: 'Végétarien', value: 'Oui' },
+            { name: 'Quantité', value: '2L' },
             { name: 'Végan', value: 'Non' },
             { name: 'Sans gluten', value: 'Oui' }
         ]
     },
     'glace-chocolat': {
         title: 'Glace au Chocolat',
-        price: '6,50 € / litre',
+        price: '19,90 € HT',
         image: 'images/Glaces/chocolat.jpg',
         description: 'Un délicieux chocolat noir à 70% pour les amateurs de chocolat intense et onctueux.',
         specs: [
             { name: 'Allergènes', value: 'Lait, œufs, sucre, soja' },
-            { name: 'Végétarien', value: 'Oui' },
+            { name: 'Quantité', value: '2L' },
             { name: 'Végan', value: 'Non' },
             { name: 'Sans gluten', value: 'Oui' }
         ]
     },
     'glace-fraise': {
         title: 'Sorbet Fraise',
-        price: '6,20 € / litre',
+        price: '19,90 € HT',
         image: 'images/Glaces/fraise.jpg',
         description: 'Un sorbet rafraîchissant à base de fraises françaises, parfait pour les journées ensoleillées.',
         specs: [
             { name: 'Allergènes', value: 'Fruits à coque' },
-            { name: 'Végétarien', value: 'Oui' },
+            { name: 'Quantité', value: '2L' },
             { name: 'Végan', value: 'Oui' },
             { name: 'Sans gluten', value: 'Oui' }
         ]
