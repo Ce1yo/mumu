@@ -274,7 +274,7 @@ const productsData = {
             { name: 'Dimensions', value: '50 x 75 x 160 cm' },
             { name: 'Poids', value: '90 kg' },
             { name: 'Alimentation', value: '220-240V / 50Hz' },
-            { name: 'Garantie', value: '2 ans' }
+            { name: 'Garantie', value: '1 ans' }
         ]
     },
     'machine-premium': {
@@ -289,7 +289,7 @@ const productsData = {
             { name: 'Dimensions', value: '55 x 80 x 165 cm' },
             { name: 'Poids', value: '100 kg' },
             { name: 'Alimentation', value: '220-240V / 50Hz' },
-            { name: 'Garantie', value: '2 ans' }
+            { name: 'Garantie', value: '1 ans' }
         ]
     },
     'machine-italienne-pro': {
@@ -304,7 +304,7 @@ const productsData = {
             { name: 'Dimensions', value: '58 x 85 x 170 cm' },
             { name: 'Poids', value: '110 kg' },
             { name: 'Alimentation', value: '220-240V / 50Hz' },
-            { name: 'Garantie', value: '2 ans' }
+            { name: 'Garantie', value: '1 ans' }
         ]
     },
     'machine-haute-performance': {
@@ -319,7 +319,7 @@ const productsData = {
             { name: 'Dimensions', value: '60 x 90 x 180 cm' },
             { name: 'Poids', value: '120 kg' },
             { name: 'Alimentation', value: '380V triphasé' },
-            { name: 'Garantie', value: '2 ans' }
+            { name: 'Garantie', value: '1 ans' }
         ]
     },
     'machine-granite-pro': {
@@ -334,7 +334,7 @@ const productsData = {
             { name: 'Dimensions', value: '45 x 65 x 140 cm' },
             { name: 'Poids', value: '55 kg' },
             { name: 'Alimentation', value: '220-240V / 50Hz' },
-            { name: 'Garantie', value: '2 ans' },
+            { name: 'Garantie', value: '1 ans' },
             { name: 'Production', value: 'Jusqu\'à 60 verres/heure' },
             { name: 'Matériau', value: 'Acier inoxydable' },
             { name: 'Fonctionnalités', value: 'Régulation de température, affichage numérique, système de nettoyage intégré' }
@@ -351,7 +351,7 @@ const productsData = {
             { name: 'Dimensions', value: '50 x 60 x 150 cm' },
             { name: 'Poids', value: '45 kg' },
             { name: 'Alimentation', value: '220-240V / 50Hz' },
-            { name: 'Garantie', value: '2 ans' }
+            { name: 'Garantie', value: '1 ans' }
         ]
     },
     'machine-economique': {
@@ -416,7 +416,7 @@ const productsData = {
             { name: 'Capacité', value: '5 litres' },
             { name: 'Diamètre', value: '30 cm' },
             { name: 'Hauteur', value: '25 cm' },
-            { name: 'Garantie', value: '2 ans' }
+            { name: 'Garantie', value: '1 ans' }
         ]
     },
     'piece-manette-granite': {
@@ -466,7 +466,7 @@ const productsData = {
             { name: 'Matière', value: 'Inox 18/10' },
             { name: 'Capacité', value: '4 litres' },
             { name: 'Diamètre', value: '28 cm' },
-            { name: 'Garantie', value: '2 ans' }
+            { name: 'Garantie', value: '1 ans' }
         ]
     },
     // Pièces détachées - Suite
@@ -709,7 +709,7 @@ const productsData = {
             { name: 'Type', value: 'Distributeur' },
             { name: 'Compatible', value: 'Tous modèles' },
             { name: 'Matière', value: 'Acier inoxydable' },
-            { name: 'Garantie', value: '2 ans' }
+            { name: 'Garantie', value: '1 ans' }
         ]
     },
     'piece-ital-6': {
@@ -1047,6 +1047,59 @@ const productsData = {
             { name: 'Matière', value: 'Plastique ABS' },
             { name: 'Garantie', value: '1 an' }
         ]
+    },
+    // Forfaits glaces
+    'forfait-glaces-1': {
+        title: 'Forfait 1 - 1500 Glaces',
+        price: '675,00 € HT',
+        image: 'images/ChatGPT Image 29 sept. 2025 à 23_20_22.png',
+        description: 'MUMU la marchande de glaces vous propose ce forfait glaces italiennes avec du produit à glaces Français de haute qualité et un pouvoir de foisonnement énorme (1 litre de glace égale à 1.7 litres à la sortie de la machine). Forfait comprenant 1500 glaces avec cornets inclus et livraison gratuite partout en France (hors DOM-TOM, Corse et zones montagne - nous consulter).',
+        specs: [
+            { name: 'Nombre de glaces', value: '1500 glaces' },
+            { name: 'Coût de revient', value: '0,45€ / glace' },
+            { name: 'Produit', value: 'Bibs de 5L (5.5kg)' },
+            { name: 'Rendement', value: '75 glaces par bib' },
+            { name: 'Parfums', value: '17 parfums disponibles' },
+            { name: 'Cornets', value: '3 tailles mélangeables' },
+            { name: 'Livraison', value: 'Incluse en France' },
+            { name: 'Foisonnement', value: '1L = 1.7L en sortie' }
+        ],
+        additionalInfo: '<strong>Parfums disponibles (selon stocks) :</strong><br>Vanille, Fraise sorbet, Pistache, Chocolat, Citron, Caramel, Noix de coco, Framboise, Banane, Passion, Cassis, Café, Abricot, Fraise lait, Nougat, Pâte à tartiner, Caramel beurre salé.<br><br><strong>Cornets :</strong> 3 tailles mélangeables (110x45mm, 158x50mm, 160x80mm).<br><br>⚠️ Livraison gratuite partout en France (hors DOM-TOM, Corse et zones montagne - nous consulter).'
+    },
+    'forfait-glaces-2': {
+        title: 'Forfait 2 - 3000 Glaces',
+        price: '1 200,00 € HT',
+        image: 'images/ChatGPT Image 29 sept. 2025 à 23_20_22.png',
+        description: 'MUMU la marchande de glaces vous propose ce forfait glaces italiennes avec du produit à glaces Français de haute qualité et un pouvoir de foisonnement énorme (1 litre de glace égale à 1.7 litres à la sortie de la machine). Forfait comprenant 3000 glaces avec cornets inclus et livraison gratuite partout en France (hors DOM-TOM, Corse et zones montagne - nous consulter).',
+        specs: [
+            { name: 'Nombre de glaces', value: '3000 glaces' },
+            { name: 'Coût de revient', value: '0,40€ / glace' },
+            { name: 'Produit', value: 'Bibs de 5L (5.5kg)' },
+            { name: 'Rendement', value: '75 glaces par bib' },
+            { name: 'Parfums', value: '17 parfums disponibles' },
+            { name: 'Cornets', value: '3 tailles mélangeables' },
+            { name: 'Livraison', value: 'Incluse en France' },
+            { name: 'Foisonnement', value: '1L = 1.7L en sortie' }
+        ],
+        additionalInfo: '<strong>Parfums disponibles (selon stocks) :</strong><br>Vanille, Fraise sorbet, Pistache, Chocolat, Citron, Caramel, Noix de coco, Framboise, Banane, Passion, Cassis, Café, Abricot, Fraise lait, Nougat, Pâte à tartiner, Caramel beurre salé.<br><br><strong>Cornets :</strong> 3 tailles mélangeables (110x45mm, 158x50mm, 160x80mm).<br><br>⚠️ Livraison gratuite partout en France (hors DOM-TOM, Corse et zones montagne - nous consulter).'
+    },
+    // Forfait granité
+    'forfait-granite-1': {
+        title: 'Forfait Granité - 3220 Gobelets',
+        price: '579,60 € HT',
+        image: 'images/granites.png',
+        description: 'MUMU la marchande de glaces vous présente son forfait sirops de granités tout prêts. Pas besoin de transporter des kilos de sucres ou de courir dans tous les magasins pour acheter du sucre en grosse quantité. Avec le sirop tout prêt de MUMU, vous avez déjà le bon dosage de sucre avec le bon dosage du parfum. Pas besoin de mélanger le sucre avec le sirop dans un sceau pour mettre après dans les bacs - gains de temps et de vaisselles. Le tout prêt de MUMU est déjà prêt : secouez 15 secondes le bidon, versez un litre dans votre bac, rajoutez 8 litres d’eau et c’est parti !',
+        specs: [
+            { name: 'Nombre de gobelets', value: '3220 gobelets de 20cl' },
+            { name: 'Coût de revient', value: '0,18€ / gobelet' },
+            { name: 'Contenu', value: '14 bidons de 5L' },
+            { name: 'Préparation', value: '1L sirop + 8L d’eau' },
+            { name: 'Parfums', value: '20 parfums disponibles' },
+            { name: 'Personnalisation', value: 'Jusqu’à 14 parfums mélangeables' },
+            { name: 'Livraison', value: 'Incluse en France' },
+            { name: 'Avantage', value: 'Tout prêt, pré-dosé' }
+        ],
+        additionalInfo: '<strong>20 Parfums disponibles (selon stocks) :</strong><br>Barbe à papa, Citron, Citron vert, Fraise, Kiwi banane, Colas, Licorne, Mangue, Mangue goyave, Melon, Menthe verte, Melon mangue, Orange sanguine, Passion, Pastèque, Pomme verte, Thé pêche, Tropical bleue, Fruit rouge, Chewing-gum.<br><br><strong>Mode d’emploi simple :</strong><br>1. Secouez le bidon 15 secondes<br>2. Versez 1 litre dans votre bac<br>3. Rajoutez 8 litres d’eau<br>4. C’est prêt !<br><br><strong>Avantages :</strong><br>✓ Précisez vos parfums à la commande (jusqu’à 14 parfums différents)<br>✓ Dosage parfait du sucre et du parfum<br>✓ Gain de temps et de vaisselle<br>✓ Pas besoin de transporter des kilos de sucre<br><br>⚠️ Livraison gratuite partout en France (hors DOM-TOM, Corse et zones montagne - nous consulter).'
     }
 };
 
@@ -1062,6 +1115,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalImage = document.getElementById('modalProductImage');
     const modalSpecs = document.getElementById('modalProductSpecs');
     const modalDescription = document.getElementById('modalProductDescription');
+    const modalAdditionalInfo = document.getElementById('modalAdditionalInfo');
     const modalAddToCart = document.getElementById('modalAddToCart');
     const modalContactUs = document.getElementById('modalContactUs');
 
@@ -1075,20 +1129,35 @@ document.addEventListener('DOMContentLoaded', function() {
         modalImage.src = product.image;
         modalImage.alt = product.title;
         modalDescription.textContent = product.description;
+        
+        // Gestion des informations supplémentaires
+        if (modalAdditionalInfo) {
+            if (product.additionalInfo) {
+                modalAdditionalInfo.innerHTML = product.additionalInfo;
+                modalAdditionalInfo.style.display = 'block';
+            } else {
+                modalAdditionalInfo.innerHTML = '';
+                modalAdditionalInfo.style.display = 'none';
+            }
+        }
 
         // Mise à jour des spécifications
         if (product.specs && product.specs.length > 0) {
-            modalSpecs.innerHTML = product.specs.map(spec => `
-                <div class="spec-item">
-                    <strong>${spec.name}</strong>
-                    <span>${spec.value}</span>
-                </div>
-            `).join('');
-            modalSpecs.style.display = 'grid';
-        } else {
-            modalSpecs.style.display = 'none';
+            const filteredSpecs = product.specs.filter(spec => (spec.name || '').toLowerCase() !== 'garantie');
+            if (filteredSpecs.length > 0) {
+                modalSpecs.innerHTML = filteredSpecs.map(spec => `
+                    <div class="spec-item">
+                        <strong>${spec.name}</strong>
+                        <span>${spec.value}</span>
+                    </div>
+                `).join('');
+                modalSpecs.style.display = 'grid';
+            } else {
+                modalSpecs.innerHTML = '';
+                modalSpecs.style.display = 'none';
+            }
         }
-
+        
         // Mise à jour du lien "Ajouter au panier"
         if (modalAddToCart) {
             modalAddToCart.href = `#${productId}`;
@@ -1098,7 +1167,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Ici, vous pourriez ajouter le code pour ajouter le produit au panier
             };
         }
-
+        
         // Mise à jour du lien "Nous contacter"
         if (modalContactUs) {
             modalContactUs.href = `contact.html?produit=${encodeURIComponent(product.title)}`;
@@ -1108,7 +1177,6 @@ document.addEventListener('DOMContentLoaded', function() {
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
     }
-
     // Fermer la modale
     function closeModal() {
         modal.style.display = 'none';

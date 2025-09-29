@@ -57,14 +57,12 @@ body {
     transition: transform 0.3s ease;
 }
 
-.cat-left {
-    top: -30px;
-    left: -30px;
-    transform: rotate(-15deg);
+    top: 50px;
+    left: 300px;
+    transform: rotate(-10deg);
 }
 
 .cat-right {
-    top: -30px;
     right: -30px;
     transform: scaleX(-1) rotate(-15deg);
 }
@@ -517,14 +515,12 @@ footer {
     transition: transform 0.3s ease;
 }
 
-.cat-left {
-    top: -30px;
-    left: -30px;
-    transform: rotate(-15deg);
+    top: 50px;
+    left: 300px;
+    transform: rotate(-10deg);
 }
 
 .cat-right {
-    top: -30px;
     right: -30px;
     transform: scaleX(-1) rotate(-15deg);
 }

@@ -164,17 +164,20 @@
     gap: 10px;
     margin-top: auto;
     width: 100%;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Style spécifique pour les pages de machines */
 .machines-page .card-buttons {
     flex-direction: column;
+    align-items: center;
 }
 
 /* Style spécifique pour les autres pages */
 .products-page .card-buttons {
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Boutons de la carte */

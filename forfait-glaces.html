@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nos Granités - Bienvenue chez Mumu</title>
+    <title>Forfait Glaces - Bienvenue chez Mumu</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/cards.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,27 +11,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="temp_cat_styles.css">
 </head>
-<body class="machines-page">
+<body class="products-page">
     <div class="vintage-border">
         <div class="cat-decoration">
             <img src="images/Portrait de chat vintage.png" alt="Décoration chat vintage" class="cat-left">
             <img src="images/ChatGPT Image 29 sept. 2025 à 22_39_25.png" alt="Décoration chat moderne" class="cat-right">
         </div>
         <header>
-            <h1>Nos Granités</h1>
-            <p class="subtitle">La fraîcheur à l'italienne</p>
+            <h1>Forfait Glaces</h1>
+            <p class="subtitle">Découvrez nos forfaits</p>
         </header>
 
         <nav>
             <ul>
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="glaces.html">Machines Glaces</a></li>
-                <li><a href="granites.html" class="active">Machines Granité</a></li>
+                <li><a href="granites.html">Machines Granité</a></li>
                 <li><a href="gouts.html">Nos Goûts</a></li>
                 <li><a href="pieces-detachees.html">Pièces Détachées Machines à Granité</a></li>
                 <li><a href="pieces-detachees-2.html">Pièces Détachées Machines à Glace</a></li>
                 <li><a href="forfait-granite.html">Forfait Granité</a></li>
-                <li><a href="forfait-glaces.html">Forfait Glaces</a></li>
+                <li><a href="forfait-glaces.html" class="active">Forfait Glaces</a></li>
                 <li><a href="promotions.html">Promotions</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -39,16 +39,35 @@
 
         <main>
             <section class="menu-section">
-                <h2>Notre Machine à Granité</h2>
+                <h2>Nos Forfaits de Glaces Italiennes</h2>
                 <div class="menu-grid">
-                    <div class="menu-item featured" data-product-id="machine-granite-pro">
+                    <!-- Forfait 1 -->
+                    <div class="menu-item" data-product-id="forfait-glaces-1">
                         <div class="card-image">
-                            <img src="images/Machines a granite/granite.png" alt="Machine à granité professionnelle">
+                            <img src="images/ChatGPT Image 29 sept. 2025 à 23_20_22.png" alt="Forfait Glaces 1">
                         </div>
                         <div class="card-content">
-                            <h3>Machine à Granité Professionnelle</h3>
-                            <p>Idéale pour les professionnels de la restauration</p>
-                            <p class="price">1 700,00 € HT</p>
+                            <h3>Forfait 1 - 1500 Glaces</h3>
+                            <p>Cornets inclus + Livraison gratuite</p>
+                            <p class="price">675,00 € HT</p>
+                            <p class="unit-price">Coût de revient : 0,45€ / glace</p>
+                            <div class="card-buttons">
+                                <a href="#" class="btn">En savoir plus</a>
+                                <a href="#" class="btn btn-cart">Ajouter au panier</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Forfait 2 -->
+                    <div class="menu-item" data-product-id="forfait-glaces-2">
+                        <div class="card-image">
+                            <img src="images/ChatGPT Image 29 sept. 2025 à 23_20_22.png" alt="Forfait Glaces 2">
+                        </div>
+                        <div class="card-content">
+                            <h3>Forfait 2 - 3000 Glaces</h3>
+                            <p>Cornets inclus + Livraison gratuite</p>
+                            <p class="price">1 200,00 € HT</p>
+                            <p class="unit-price">Coût de revient : 0,40€ / glace</p>
                             <div class="card-buttons">
                                 <a href="#" class="btn">En savoir plus</a>
                                 <a href="#" class="btn btn-cart">Ajouter au panier</a>
@@ -82,6 +101,8 @@
             <div class="footer-bottom">
                 <p>&copy; 2025 Mumu - Glaces Italiennes & Granités. Tous droits réservés.</p>
             </div>
+        </footer>
+    </div>
 
     <!-- Modale de détails du produit -->
     <div id="productModal" class="modal-overlay">
@@ -98,6 +119,9 @@
                 </div>
                 <div class="modal-description" id="modalProductDescription">
                     Description détaillée du produit...
+                </div>
+                <div class="modal-additional-info" id="modalAdditionalInfo" style="margin-top: 20px;">
+                    <!-- Les informations supplémentaires seront ajoutées dynamiquement -->
                 </div>
                 <div class="modal-actions">
                     <a href="#" class="btn btn-cart" id="modalAddToCart">Ajouter au panier</a>
