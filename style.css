@@ -127,6 +127,17 @@ nav ul li a:hover {
     border-bottom: 2px solid var(--accent-color);
 }
 
+nav ul li a.active {
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+/* Lien Panier dans la navigation */
+nav .cart-link-container,
+nav .cart-icon-container {
+    margin-left: 10px;
+}
+
 /* Sections principales */
 .hero {
     position: relative;

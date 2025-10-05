@@ -421,7 +421,7 @@ const productsData = {
     },
     'piece-manette-granite': {
         title: 'Manette pour Granité',
-        price: '29,90 €',
+        price: '13,90 €',
         image: 'images/pieces granite/1g manette pour granité.png',
         description: 'Manette de commande complète pour machine à granité. Permet de contrôler facilement la distribution des boissons. Confortable à utiliser et résistante à l\'usure.',
         specs: [
@@ -631,6 +631,7 @@ const productsData = {
         price: '113,80 €',
         image: 'images/pieces granite/14g moteur granité.png',
         description: 'Moteur de remplacement pour machine à granité. Pièce essentielle pour le brassage des boissons.',
+        hideCartButton: true,
         specs: [
             { name: 'Puissance', value: '120 W' },
             { name: 'Tension', value: '220-240V' },
@@ -753,6 +754,7 @@ const productsData = {
         price: '46,50 €',
         image: 'images/pieces italiennes/20 moteur ventilateur 45 watts glace italienne.png',
         description: 'Ventilateur de refroidissement 45W pour machines à glaces italiennes. Assure un refroidissement optimal du moteur.',
+        hideCartButton: true,
         specs: [
             { name: 'Type', value: 'Ventilateur' },
             { name: 'Puissance', value: '45W' },
@@ -765,6 +767,7 @@ const productsData = {
         price: '49,50 €',
         image: 'images/pieces italiennes/21 moteur ventilateur 70 watts glace italienne.png',
         description: 'Ventilateur de refroidissement 70W haute performance pour machines à glaces italiennes professionnelles.',
+        hideCartButton: true,
         specs: [
             { name: 'Type', value: 'Ventilateur' },
             { name: 'Puissance', value: '70W' },
@@ -777,6 +780,7 @@ const productsData = {
         price: '210 €',
         image: 'images/pieces italiennes/24 gros moteur principal glace italienne.png',
         description: 'Moteur principal de remplacement pour machines à glaces italiennes. Cœur du système de fabrication de la glace.',
+        hideCartButton: true,
         specs: [
             { name: 'Type', value: 'Moteur' },
             { name: 'Puissance', value: '0,5 CV' },
@@ -1017,6 +1021,7 @@ const productsData = {
         price: '? €',
         image: 'images/pieces italiennes/27 courroies glaces italienne.png',
         description: 'Jeu de courroies de rechange pour la transmission des machines à glaces italiennes.',
+        hideCartButton: true,
         specs: [
             { name: 'Type', value: 'Courroies' },
             { name: 'Nombre', value: '3 pièces' },
@@ -1141,31 +1146,29 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
-        // Mise à jour des spécifications
-        if (product.specs && product.specs.length > 0) {
-            const filteredSpecs = product.specs.filter(spec => (spec.name || '').toLowerCase() !== 'garantie');
-            if (filteredSpecs.length > 0) {
-                modalSpecs.innerHTML = filteredSpecs.map(spec => `
-                    <div class="spec-item">
-                        <strong>${spec.name}</strong>
-                        <span>${spec.value}</span>
-                    </div>
-                `).join('');
-                modalSpecs.style.display = 'grid';
-            } else {
-                modalSpecs.innerHTML = '';
-                modalSpecs.style.display = 'none';
-            }
+        // Masquer les spécifications techniques (uniquement infos essentielles)
+        if (modalSpecs) {
+            modalSpecs.innerHTML = '';
+            modalSpecs.style.display = 'none';
         }
         
         // Mise à jour du lien "Ajouter au panier"
         if (modalAddToCart) {
-            modalAddToCart.href = `#${productId}`;
-            modalAddToCart.onclick = (e) => {
-                e.preventDefault();
-                alert(`Produit ajouté au panier : ${product.title}`);
-                // Ici, vous pourriez ajouter le code pour ajouter le produit au panier
-            };
+            if (product.hideCartButton) {
+                modalAddToCart.style.display = 'none';
+            } else {
+                modalAddToCart.style.display = 'inline-block';
+                modalAddToCart.href = `#${productId}`;
+                modalAddToCart.onclick = (e) => {
+                    e.preventDefault();
+                    // Ajouter au panier en utilisant le système de panier
+                    if (typeof cart !== 'undefined') {
+                        cart.addItem(productId, product);
+                    } else {
+                        alert(`Produit ajouté au panier : ${product.title}`);
+                    }
+                };
+            }
         }
         
         // Mise à jour du lien "Nous contacter"
@@ -1211,5 +1214,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         }
+    });
+
+    // Configurer les boutons "Ajouter au panier" sur les cartes
+    document.querySelectorAll('.btn-cart').forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const card = button.closest('.menu-item');
+            if (card) {
+                const productId = card.dataset.productId;
+                if (productId && productsData[productId]) {
+                    const product = productsData[productId];
+                    // Vérifier si le panier existe
+                    if (typeof cart !== 'undefined') {
+                        cart.addItem(productId, product);
+                    } else {
+                        alert(`Produit ajouté : ${product.title}`);
+                    }
+                }
+            }
+        });
     });
 });

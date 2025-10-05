@@ -6,6 +6,7 @@
     <title>Promotions - Bienvenue chez Mumu</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/cart.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -27,13 +28,19 @@
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="glaces.html">Machines Glaces</a></li>
                 <li><a href="granites.html">Machines Granité</a></li>
-                <li><a href="gouts.html">Nos Goûts</a></li>
                 <li><a href="pieces-detachees.html">Pièces Détachées Machines à Granité</a></li>
                 <li><a href="pieces-detachees-2.html">Pièces Détachées Machines à Glace</a></li>
                 <li><a href="forfait-granite.html">Forfait Granité</a></li>
                 <li><a href="forfait-glaces.html">Forfait Glaces</a></li>
                 <li><a href="promotions.html" class="active">Promotions</a></li>
+                <li><a href="sav.html">SAV & Rachat</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li class="cart-link-container">
+                    <a href="#" id="cartIcon" class="cart-link">
+                        Panier
+                        <span class="cart-count">0</span>
+                    </a>
+                </li>
             </ul>
         </nav>
 
@@ -75,5 +82,33 @@
             </div>
         </footer>
     </div>
+    <!-- Modal du Panier -->
+    <div id="cartModal" class="cart-modal">
+        <div class="cart-modal-content">
+            <div class="cart-modal-header">
+                <h2>🛒 Mon Panier</h2>
+                <button id="closeCart" class="cart-close">&times;</button>
+            </div>
+            <div class="cart-modal-body">
+                <div id="emptyCartMessage" class="empty-cart-message">
+                    <p>Votre panier est vide</p>
+                    <a href="glaces.html" class="btn">Découvrir nos produits</a>
+                </div>
+                <div id="cartItems" class="cart-items"></div>
+            </div>
+            <div class="cart-modal-footer">
+                <div class="cart-total">
+                    <span>Total HT :</span>
+                    <span id="cartTotal">0,00 €</span>
+                </div>
+                <div class="cart-actions">
+                    <button id="requestQuote" class="cart-btn cart-btn-primary">Demander un devis</button>
+                    <button id="clearCart" class="cart-btn cart-btn-secondary">Vider le panier</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/cart.js"></script>
 </body>
 </html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Service Après-Vente et rachat d'anciennes machines à glaces - Mumu">
+    <meta name="keywords" content="SAV, service après-vente, rachat machine à glace, réparation machine à glace">
+    <title>SAV & Rachat - Bienvenue chez Mumu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="temp_cat_styles.css">
+</head>
+<body>
+    <div class="vintage-border">
+        <div class="cat-decoration">
+            <img src="images/Portrait de chat vintage.png" alt="Décoration chat vintage" class="cat-left">
+            <img src="images/ChatGPT Image 29 sept. 2025 à 22_39_25.png" alt="Décoration chat moderne" class="cat-right">
+        </div>
+        <header>
+            <h1>Service Après-Vente</h1>
+            <p class="subtitle">Nous prenons soin de vos machines</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="glaces.html">Machines Glaces</a></li>
+                <li><a href="granites.html">Machines Granité</a></li>
+                <li><a href="pieces-detachees.html">Pièces Détachées Machines à Granité</a></li>
+                <li><a href="pieces-detachees-2.html">Pièces Détachées Machines à Glace</a></li>
+                <li><a href="forfait-granite.html">Forfait Granité</a></li>
+                <li><a href="forfait-glaces.html">Forfait Glaces</a></li>
+                <li><a href="promotions.html">Promotions</a></li>
+                <li><a href="sav.html" class="active">SAV & Rachat</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="cart-link-container">
+                    <a href="#" id="cartIcon" class="cart-link">
+                        Panier
+                        <span class="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <main>
+            <section class="menu-section" style="margin-top: 60px;">
+                <h2>SAV & Rachat</h2>
+            </section>
+
+            <div class="contact-container">
+                <div style="text-align: center; margin-bottom: 40px;">
+                    <img src="images/Affiches/belle baniere rachat machine 2.png" 
+                         alt="Rachat de machines à glaces" 
+                         style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);">
+                </div>
+
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <h3>💰 Nous Rachetons Vos Machines</h3>
+                        <p><strong>Vous souhaitez vendre votre machine ?</strong></p>
+                        <p>Nous rachetons toutes les machines à glaces et à granités, quel que soit leur état :</p>
+                        <ul style="list-style: none; padding-left: 0;">
+                            <li>✓ Machines en bon état</li>
+                            <li>✓ Machines nécessitant des réparations</li>
+                            <li>✓ Machines anciennes ou récentes</li>
+                            <li>✓ Toutes marques acceptées</li>
+                        </ul>
+                    </div>
+
+                    <div class="contact-card">
+                        <h3>📋 Procédure de Rachat</h3>
+                        <p><strong>Comment ça marche ?</strong></p>
+                        <ol style="padding-left: 20px;">
+                            <li>Contactez-nous avec les détails de votre machine</li>
+                            <li>Envoyez-nous des photos</li>
+                            <li>Nous vous proposons un prix</li>
+                            <li>Paiement immédiat si accord</li>
+                            <li>Enlèvement rapide de la machine</li>
+                        </ol>
+                    </div>
+
+                    <div class="contact-card">
+                        <h3>✨ Pourquoi Nous Choisir ?</h3>
+                        <ul style="list-style: none; padding-left: 0;">
+                            <li>✓ Estimation gratuite et rapide</li>
+                            <li>✓ Prix justes et compétitifs</li>
+                            <li>✓ Paiement immédiat</li>
+                            <li>✓ Enlèvement gratuit dans la région</li>
+                            <li>✓ Démarches administratives simplifiées</li>
+                            <li>✓ Recyclage responsable</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h2>Demande de Rachat ou de Service SAV</h2>
+                    <!-- 
+                    CONFIGURATION FORMSPREE :
+                    1. Créez un compte sur https://formspree.io
+                    2. Créez un nouveau formulaire
+                    3. Remplacez "VOTRE_FORMSPREE_ID" ci-dessous par votre ID unique
+                    -->
+                    <form action="https://formspree.io/f/xjkaoejl" method="POST">
+                        <div class="form-group">
+                            <label for="service-type">Type de demande</label>
+                            <select id="service-type" name="service-type" required style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 4px; font-family: 'Roboto', sans-serif; font-size: 1rem;">
+                                <option value="">-- Sélectionnez --</option>
+                                <option value="sav">Service Après-Vente / Réparation</option>
+                                <option value="rachat">Rachat de machine</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name">Votre nom</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Votre email</label>
+                            <input type="email" id="email" name="_replyto" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Votre téléphone</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="machine-type">Type de machine</label>
+                            <input type="text" id="machine-type" name="machine-type" placeholder="Ex: Machine à glace italienne, Machine à granité..." required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="machine-state">État de la machine</label>
+                            <select id="machine-state" name="machine-state" style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 4px; font-family: 'Roboto', sans-serif; font-size: 1rem;">
+                                <option value="">-- Sélectionnez --</option>
+                                <option value="excellent">Excellent état (fonctionne parfaitement)</option>
+                                <option value="bon">Bon état (quelques signes d'usure)</option>
+                                <option value="moyen">État moyen (nécessite des réparations mineures)</option>
+                                <option value="mauvais">Mauvais état (nécessite des réparations importantes)</option>
+                                <option value="hors-service">Hors service</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Votre message / Description</label>
+                            <textarea id="message" name="message" placeholder="Décrivez votre demande, l'état de la machine, les problèmes rencontrés..." required></textarea>
+                        </div>
+                        
+                        <!-- Champs cachés pour Formspree -->
+                        <input type="hidden" name="_subject" value="Nouvelle demande SAV/Rachat - Mumu Glaces">
+                        <input type="hidden" name="_next" value="https://www.glacesitaliennes71.com/sav.html?merci">
+                        <input type="text" name="_gotcha" style="display:none">
+                        
+                        <button type="submit" class="btn-submit">Envoyer la demande</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <footer id="contact">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Horaires</h3>
+                    <p>Du lundi au samedi</p>
+                    <p>8h - 20h</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>06 86 18 07 68</p>
+                    <p>calzolari.muriel@orange.fr</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Suivez-nous</h3>
+                    <div class="social-links">
+                        <a href="#">Instagram</a>
+                        <a href="#">Facebook</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mumu - Glaces Italiennes & Granités. Tous droits réservés.</p>
+            </div>
+        </footer>
+    </div>
+    <!-- Modal du Panier -->
+    <div id="cartModal" class="cart-modal">
+        <div class="cart-modal-content">
+            <div class="cart-modal-header">
+                <h2>🛒 Mon Panier</h2>
+                <button id="closeCart" class="cart-close">&times;</button>
+            </div>
+            <div class="cart-modal-body">
+                <div id="emptyCartMessage" class="empty-cart-message">
+                    <p>Votre panier est vide</p>
+                    <a href="glaces.html" class="btn">Découvrir nos produits</a>
+                </div>
+                <div id="cartItems" class="cart-items"></div>
+            </div>
+            <div class="cart-modal-footer">
+                <div class="cart-total">
+                    <span>Total HT :</span>
+                    <span id="cartTotal">0,00 €</span>
+                </div>
+                <div class="cart-actions">
+                    <button id="requestQuote" class="cart-btn cart-btn-primary">Demander un devis</button>
+                    <button id="clearCart" class="cart-btn cart-btn-secondary">Vider le panier</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/cart.js"></script>
+</body>
+</html>
