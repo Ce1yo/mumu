@@ -59,38 +59,32 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p style="margin-bottom: 15px; color: var(--text-color); font-weight: bold; font-size: 1.1rem;">
                     ✅ ${results.length} résultat${results.length > 1 ? 's' : ''} trouvé${results.length > 1 ? 's' : ''}
                 </p>
-                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 15px;">
-                    ${results.map(product => `
-                        <div class="search-result-item" style="border: 2px solid #ddd; border-radius: 8px; padding: 15px; transition: all 0.3s ease; cursor: pointer; background: rgba(255,255,255,0.8);">
-                            <img src="${product.image}" alt="${product.title}" style="width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 10px;">
-                            <h3 style="font-size: 1rem; margin-bottom: 5px; color: var(--text-color); font-family: 'Roboto', sans-serif;">${product.title}</h3>
-                            <p style="font-size: 0.9rem; color: var(--accent-color); font-weight: bold; margin-bottom: 10px;">${product.price}</p>
-                            <p style="font-size: 0.85rem; color: #666; margin-bottom: 10px; line-height: 1.4; max-height: 60px; overflow: hidden;">${product.description ? product.description.substring(0, 100) + '...' : ''}</p>
-                            <button onclick="openProductModalFromSearch('${product.id}')" style="width: 100%; padding: 8px; background-color: var(--accent-color); color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; transition: all 0.3s ease; font-family: 'Roboto', sans-serif;">
-                                En savoir plus
-                            </button>
+                <div class="menu-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;">
+                    ${results.map(product => {
+                        const productData = productsData[product.id];
+                        const hideCartButton = productData && productData.hideCartButton;
+                        return `
+                        <div class="menu-item search-result-card" data-product-id="${product.id}">
+                            <div class="card-image">
+                                <img src="${product.image}" alt="${product.title}">
+                            </div>
+                            <div class="card-content">
+                                <h3>${product.title}</h3>
+                                <p style="font-size: 0.9rem; color: #666; margin: 10px 0; min-height: 40px;">${product.description ? product.description.substring(0, 80) + '...' : ''}</p>
+                                <p class="price">${product.price}</p>
+                                <div class="card-buttons">
+                                    <a href="#" class="btn btn-details" onclick="event.preventDefault(); openProductModalFromSearch('${product.id}')">En savoir plus</a>
+                                    ${!hideCartButton ? `<a href="#" class="btn btn-cart" onclick="event.preventDefault(); addToCartFromSearch('${product.id}')">Ajouter au panier</a>` : ''}
+                                </div>
+                            </div>
                         </div>
-                    `).join('')}
+                    `}).join('')}
                 </div>
             </div>
         `;
         
         searchResults.innerHTML = resultsHTML;
         searchResults.style.display = 'block';
-        
-        // Ajouter effet hover sur les résultats
-        document.querySelectorAll('.search-result-item').forEach(item => {
-            item.addEventListener('mouseenter', function() {
-                this.style.borderColor = 'var(--accent-color)';
-                this.style.transform = 'translateY(-5px)';
-                this.style.boxShadow = '0 6px 20px rgba(230, 57, 70, 0.3)';
-            });
-            item.addEventListener('mouseleave', function() {
-                this.style.borderColor = '#ddd';
-                this.style.transform = 'translateY(0)';
-                this.style.boxShadow = 'none';
-            });
-        });
     }
     
     // Événement de recherche avec debounce
@@ -137,5 +131,15 @@ function openProductModalFromSearch(productId) {
                 window.location.href = `pieces-detachees.html#${productId}`;
             }
         }
+    }
+}
+
+// Fonction globale pour ajouter au panier depuis les résultats de recherche
+function addToCartFromSearch(productId) {
+    const product = productsData[productId];
+    if (product && typeof cart !== 'undefined') {
+        cart.addItem(productId, product);
+    } else {
+        alert(`Produit ajouté : ${product ? product.title : 'Produit inconnu'}`);
     }
 }

@@ -219,7 +219,7 @@ const productsData = {
             { name: 'Type', value: 'Sur comptoir MT' },
             { name: 'Débit', value: '100-150 glaces/heure' },
             { name: 'Puissance', value: '0,75 kW' },
-            { name: 'Dimensions', value: '55 x 76 x 85 cm' },
+            { name: 'Dimensions', value: '75 x 55 x 93 cm' },
             { name: 'Poids', value: '35 kg' }
         ]
     },
@@ -232,7 +232,7 @@ const productsData = {
             { name: 'Type', value: 'Sur pieds MD' },
             { name: 'Débit', value: '150 glaces/heure' },
             { name: 'Puissance', value: '1,1 kW' },
-            { name: 'Dimensions', value: '45 x 70 x 150 cm' },
+            { name: 'Dimensions', value: '75 x 55 x 133 cm' },
             { name: 'Poids', value: '85 kg' }
         ]
     },
@@ -245,7 +245,7 @@ const productsData = {
             { name: 'Type', value: 'Sur comptoir MT' },
             { name: 'Débit', value: '150-200 glaces/heure' },
             { name: 'Puissance', value: '0,8 kW' },
-            { name: 'Dimensions', value: '55 x 76 x 85 cm' },
+            { name: 'Dimensions', value: '75 x 55 x 93 cm' },
             { name: 'Poids', value: '28 kg' }
         ]
     },
@@ -258,7 +258,7 @@ const productsData = {
             { name: 'Type', value: 'Sur pieds MD' },
             { name: 'Débit', value: '200 glaces/heure' },
             { name: 'Puissance', value: '1,5 kW' },
-            { name: 'Dimensions', value: '50 x 80 x 160 cm' },
+            { name: 'Dimensions', value: '75 x 55 x 133 cm' },
             { name: 'Poids', value: '95 kg' }
         ]
     },
@@ -271,7 +271,7 @@ const productsData = {
             { name: 'Type', value: 'Sur pieds MD25' },
             { name: 'Débit', value: '300 glaces/heure' },
             { name: 'Puissance', value: '1,8 kW' },
-            { name: 'Dimensions', value: '50 x 75 x 160 cm' },
+            { name: 'Dimensions', value: '75 x 55 x 133 cm' },
             { name: 'Poids', value: '90 kg' },
             { name: 'Alimentation', value: '220-240V / 50Hz' },
             { name: 'Garantie', value: '1 ans' }
@@ -286,7 +286,7 @@ const productsData = {
             { name: 'Type', value: 'Sur pieds MDP' },
             { name: 'Débit', value: '300 glaces/heure' },
             { name: 'Puissance', value: '1,8 kW' },
-            { name: 'Dimensions', value: '55 x 80 x 165 cm' },
+            { name: 'Dimensions', value: '75 x 55 x 133 cm' },
             { name: 'Poids', value: '100 kg' },
             { name: 'Alimentation', value: '220-240V / 50Hz' },
             { name: 'Garantie', value: '1 ans' }
@@ -301,7 +301,7 @@ const productsData = {
             { name: 'Type', value: 'Sur pieds MDP' },
             { name: 'Débit', value: '400 glaces/heure' },
             { name: 'Puissance', value: '2,0 kW' },
-            { name: 'Dimensions', value: '58 x 85 x 170 cm' },
+            { name: 'Dimensions', value: '75 x 55 x 133 cm' },
             { name: 'Poids', value: '110 kg' },
             { name: 'Alimentation', value: '220-240V / 50Hz' },
             { name: 'Garantie', value: '1 ans' }
@@ -316,7 +316,7 @@ const productsData = {
             { name: 'Type', value: 'Sur pieds MD25' },
             { name: 'Débit', value: '400 glaces/heure' },
             { name: 'Puissance', value: '2,2 kW' },
-            { name: 'Dimensions', value: '60 x 90 x 180 cm' },
+            { name: 'Dimensions', value: '75 x 55 x 133 cm' },
             { name: 'Poids', value: '120 kg' },
             { name: 'Alimentation', value: '380V triphasé' },
             { name: 'Garantie', value: '1 ans' }
@@ -348,7 +348,7 @@ const productsData = {
         specs: [
             { name: 'Capacité', value: '4 parfums' },
             { name: 'Puissance', value: '1.2 kW' },
-            { name: 'Dimensions', value: '50 x 60 x 150 cm' },
+            { name: 'Dimensions', value: '75 x 55 x 133 cm' },
             { name: 'Poids', value: '45 kg' },
             { name: 'Alimentation', value: '220-240V / 50Hz' },
             { name: 'Garantie', value: '1 ans' }
@@ -362,7 +362,7 @@ const productsData = {
         specs: [
             { name: 'Capacité', value: '2 parfums' },
             { name: 'Puissance', value: '0.5 kW' },
-            { name: 'Dimensions', value: '35 x 40 x 50 cm' },
+            { name: 'Dimensions', value: '75 x 55 x 93 cm' },
             { name: 'Poids', value: '20 kg' },
             { name: 'Alimentation', value: '220-240V / 50Hz' },
             { name: 'Garantie', value: '1 an' }
