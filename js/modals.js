@@ -1128,15 +1128,22 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
-        // Afficher les spécifications techniques
+        // Afficher uniquement les dimensions
         if (modalSpecs) {
             if (product.specs && product.specs.length > 0) {
-                modalSpecs.innerHTML = product.specs.map(spec => `
-                    <div class="spec-item">
-                        <strong>${spec.name} :</strong> ${spec.value}
-                    </div>
-                `).join('');
-                modalSpecs.style.display = 'block';
+                // Filtrer pour ne garder que les dimensions
+                const dimensions = product.specs.find(spec => spec.name === 'Dimensions');
+                if (dimensions) {
+                    modalSpecs.innerHTML = `
+                        <div class="spec-item">
+                            <strong>${dimensions.name} :</strong> ${dimensions.value}
+                        </div>
+                    `;
+                    modalSpecs.style.display = 'block';
+                } else {
+                    modalSpecs.innerHTML = '';
+                    modalSpecs.style.display = 'none';
+                }
             } else {
                 modalSpecs.innerHTML = '';
                 modalSpecs.style.display = 'none';
