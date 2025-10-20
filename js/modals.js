@@ -1106,8 +1106,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalAddToCart = document.getElementById('modalAddToCart');
     const modalContactUs = document.getElementById('modalContactUs');
 
-    // Fonction pour ouvrir la modale avec les données du produit
-    function openProductModal(productId) {
+    // Fonction pour ouvrir la modale avec les données du produit (globale pour la recherche)
+    window.openProductModal = function(productId) {
         const product = productsData[productId];
         if (!product) return;
 
@@ -1128,10 +1128,19 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
-        // Masquer les spécifications techniques (uniquement infos essentielles)
+        // Afficher les spécifications techniques
         if (modalSpecs) {
-            modalSpecs.innerHTML = '';
-            modalSpecs.style.display = 'none';
+            if (product.specs && product.specs.length > 0) {
+                modalSpecs.innerHTML = product.specs.map(spec => `
+                    <div class="spec-item">
+                        <strong>${spec.name} :</strong> ${spec.value}
+                    </div>
+                `).join('');
+                modalSpecs.style.display = 'block';
+            } else {
+                modalSpecs.innerHTML = '';
+                modalSpecs.style.display = 'none';
+            }
         }
         
         // Mise à jour du lien "Ajouter au panier"

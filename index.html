@@ -66,6 +66,19 @@
         </nav>
 
         <main>
+            <!-- Barre de recherche -->
+            <section class="search-section" style="padding: 30px 20px 20px 20px; margin-top: 20px;">
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div style="position: relative;">
+                        <input type="text" 
+                               id="searchInput" 
+                               placeholder="🔍 Rechercher une machine, une pièce détachée, un forfait..." 
+                               style="width: 100%; padding: 15px 20px; font-size: 1.1rem; border: 3px solid var(--accent-color); border-radius: 50px; font-family: 'Roboto', sans-serif; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    </div>
+                    <div id="searchResults" style="margin-top: 20px; display: none;"></div>
+                </div>
+            </section>
+
             <section id="accueil" class="hero">
 
             </section>
@@ -161,5 +174,7 @@
     </div>
 
     <script src="js/cart.js"></script>
+    <script src="js/modals.js"></script>
+    <script src="js/search.js"></script>
 </body>
 </html>
