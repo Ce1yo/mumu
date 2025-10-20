@@ -1,0 +1,446 @@
+/* Styles pour les cartes du site */
+
+/* Section d'information */
+.info-section {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 30px auto;
+    max-width: 1200px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.info-section h2 {
+    color: #2a4365;
+    text-align: center;
+    margin-bottom: 25px;
+    font-family: 'Playfair Display', serif;
+}
+
+.info-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+}
+
+.info-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.info-text h3 {
+    color: #2c5282;
+    margin: 20px 0 15px;
+    font-size: 1.4em;
+}
+
+.info-text p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #4a5568;
+}
+
+.info-text .highlight {
+    background-color: #ebf8ff;
+    padding: 15px;
+    border-radius: 8px;
+    border-right: 4px solid #4299e1;
+    font-weight: 500;
+}
+
+.info-text .note {
+    font-style: italic;
+    color: #718096;
+    margin-top: 20px;
+}
+
+.info-text ul {
+    margin: 15px 0 20px 20px;
+    padding-left: 15px;
+}
+
+.info-text li {
+    margin-bottom: 8px;
+    color: #4a5568;
+}
+
+.info-image {
+    flex: 1;
+    min-width: 250px;
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.info-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+.info-image img:hover {
+    transform: scale(1.03);
+}
+
+/* Conteneur de la grille */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+    margin: 0 auto;
+    max-width: 1400px;
+}
+
+/* Style de base des cartes */
+.menu-item {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Conteneur d'image */
+.card-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    padding: 15px;
+}
+
+/* Image à l'intérieur de la carte */
+.card-image img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+}
+
+/* Contenu de la carte */
+.card-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Titre de la carte */
+.menu-item h3 {
+    color: #e63946;
+    margin: 0 0 10px 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+/* Description de la carte */
+.menu-item p {
+    color: #555;
+    margin: 0 0 20px 0;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+/* Conteneur des boutons */
+.card-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: auto;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style spécifique pour les pages de machines */
+.machines-page .card-buttons {
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Style spécifique pour les autres pages */
+.products-page .card-buttons {
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Boutons de la carte */
+.menu-item .btn {
+    flex: 1;
+    min-width: 120px;
+    padding: 10px 15px;
+    background-color: #e63946;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    border: 2px solid #e63946;
+    text-align: center;
+}
+
+/* Effet de survol */
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.menu-item:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.menu-item .btn:hover {
+    background-color: transparent;
+    color: #e63946;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(230, 57, 70, 0.3);
+}
+
+/* Style spécifique pour le bouton ajouter au panier */
+.menu-item .btn-cart {
+    background-color: #457b9d;
+    border-color: #457b9d;
+    color: white;
+}
+
+.menu-item .btn-cart:hover {
+    background-color: transparent;
+    color: #457b9d;
+    box-shadow: 0 5px 15px rgba(69, 123, 157, 0.3);
+}
+
+/* Styles pour les cartes spéciales (comme la machine à granité) */
+.menu-item.featured {
+    max-width: 600px;
+    margin: 0 auto;
+    grid-column: 1 / -1;
+}
+
+/* Styles pour la modale de détails */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 800px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    background: none;
+    border: none;
+    font-weight: bold;
+}
+
+.modal-close:hover {
+    color: #e63946;
+}
+
+.modal-header {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-header h2 {
+    color: #e63946;
+    margin: 0 0 10px 0;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.modal-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.modal-specs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.spec-item {
+    background-color: #f9f9f9;
+    padding: 12px 15px;
+    border-radius: 6px;
+    border-left: 4px solid #e63946;
+}
+
+.spec-item strong {
+    display: block;
+    color: #333;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+.spec-item span {
+    color: #666;
+    font-size: 0.95em;
+}
+
+.modal-description {
+    line-height: 1.6;
+    color: #444;
+    margin: 10px 0;
+}
+
+.modal-price {
+    font-size: 1.5em;
+    color: #e63946;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.modal-actions .btn {
+    flex: 1;
+    min-width: 150px;
+    text-align: center;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    border: 2px solid;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style pour le bouton Ajouter au panier */
+.modal-actions .btn-cart {
+    background-color: #457b9d;
+    border-color: #457b9d;
+    color: white;
+}
+
+.modal-actions .btn-cart:hover {
+    background-color: transparent;
+    color: #457b9d;
+    box-shadow: 0 5px 15px rgba(69, 123, 157, 0.3);
+}
+
+/* Style pour le bouton Nous contacter */
+.modal-actions .btn:not(.btn-cart) {
+    background-color: #e63946;
+    border-color: #e63946;
+    color: white;
+}
+
+.modal-actions .btn:not(.btn-cart):hover {
+    background-color: transparent;
+    color: #e63946;
+    box-shadow: 0 5px 15px rgba(230, 57, 70, 0.3);
+}
+
+/* Style pour les écrans mobiles */
+@media (max-width: 576px) {
+    .modal-actions {
+        flex-direction: column;
+    }
+    
+    .modal-actions .btn {
+        width: 100%;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 0 10px;
+    }
+    
+    .card-image {
+        height: 200px;
+    }
+    
+    .menu-item .btn {
+        font-size: 0.75rem;
+        padding: 8px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .menu-item {
+        max-width: 100%;
+    }
+}

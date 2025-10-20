@@ -1,0 +1,584 @@
+/* Variables de couleurs */
+:root {
+    --main-bg-color: rgb(253, 233, 143);
+    --text-color: #2c1810;
+    --accent-color: #e63946;
+    --border-color: #2c1810;
+    --highlight-color: #f4a261;
+}
+
+/* Reset et styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 20px;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Bordure vintage */
+.vintage-border {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    border: 15px solid var(--border-color);
+    background-color: var(--main-bg-color);
+    box-shadow: 0 0 0 5px var(--accent-color), 0 0 20px rgba(0,0,0,0.2);
+    min-height: calc(100vh - 40px);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Décoration des chats */
+.cat-decoration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.cat-decoration img {
+    position: absolute;
+    width: 150px;
+    height: auto;
+    opacity: 0.8;
+    transition: transform 0.3s ease;
+}
+
+.cat-left {
+    top: -30px;
+    left: -30px;
+    transform: rotate(-15deg);
+}
+
+.cat-right {
+    top: -30px;
+    right: -30px;
+    transform: scaleX(-1) rotate(-15deg);
+}
+
+/* En-tête */
+header {
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 20px;
+    border-bottom: 3px dashed var(--accent-color);
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: var(--text-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+/* Navigation */
+nav {
+    margin-bottom: 30px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 5px 10px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+nav ul li a.active {
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+/* Lien Panier dans la navigation */
+nav .cart-link-container,
+nav .cart-icon-container {
+    margin-left: 10px;
+}
+
+/* Sections principales */
+.hero {
+    position: relative;
+    width: 100%;
+    margin: 0 auto 40px;
+    padding: 0;
+    overflow: hidden;
+    min-height: 80vh;
+    background: url('images/accueil.png') center center/contain no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+/* Version mobile */
+@media (max-width: 768px), (orientation: portrait) {
+    .hero {
+        background-image: url('../images/accueil2.png');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        min-height: 60vh;
+        height: 100vh;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    
+    /* Forcer le rafraîchissement du cache de l'image */
+    .hero::after {
+        content: '';
+        display: none;
+        background-image: url('../images/accueil2.png');
+    }
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    max-width: 90%;
+}
+
+.hero h2 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+}
+
+.hero p {
+    font-size: 1.8rem;
+    margin-bottom: 0;
+    font-style: italic;
+    color: white;
+}
+
+.menu-section {
+    margin-bottom: 50px;
+}
+
+.menu-section h2 {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 20px;
+    background-color: var(--main-bg-color);
+    z-index: 1;
+}
+
+/* Les traits rouges ont été supprimés comme demandé */
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.menu-item {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 0;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.card-image {
+    width: 100%;
+    height: 300px; /* Hauteur augmentée pour mieux voir les images */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9; /* Fond léger pour les images avec transparence */
+}
+
+.card-image img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain; /* Ajuste l'image pour qu'elle soit entièrement visible */
+    transition: transform 0.5s ease;
+}
+
+.menu-item:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.menu-item h3 {
+    margin: 15px 0 10px;
+    padding: 0 15px;
+}
+
+.menu-item p {
+    padding: 0 15px 5px;
+    margin: 0 0 5px 0;
+}
+
+.menu-item .price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    padding: 0 15px 15px;
+    margin: 0 0 15px 0;
+    border-bottom: 1px dashed #ddd;
+}
+
+/* Style des boutons Découvrir */
+.menu-item .btn {
+    display: inline-block;
+    padding: 10px 25px;
+    margin: 0 15px 20px;
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border: 2px solid var(--accent-color);
+}
+
+.menu-item .btn:hover {
+    background-color: transparent;
+    color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(230, 57, 70, 0.3);
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item h3 {
+    color: var(--accent-color);
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+/* Pied de page */
+footer {
+    margin-top: auto;
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 30px 0 0;
+    border-top: 3px dashed var(--accent-color);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    padding: 0 20px 30px;
+}
+
+.footer-section h3 {
+    color: var(--accent-color);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    position: relative;
+    display: inline-block;
+}
+
+.footer-section h3::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--accent-color);
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 15px 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    font-size: 0.9rem;
+}
+
+/* Styles pour la page de contact */
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.contact-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-card h3 {
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-family: 'Playfair Display', serif;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.contact-card p {
+    margin: 15px 0;
+    line-height: 1.6;
+}
+
+.contact-form {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.contact-form h2 {
+    color: var(--text-color);
+    margin-bottom: 25px;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(230, 57, 70, 0.2);
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.btn-submit {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 0 auto;
+}
+
+.btn-submit:hover {
+    background-color: #c82333;
+}
+
+/* Style pour les liens de contact */
+.contact-card a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-card a:hover {
+    color: #c82333;
+    text-decoration: underline;
+}
+
+/* Style pour les appareils mobiles */
+@media (max-width: 768px) {
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-form {
+        padding: 20px;
+    }
+}
+
+/* Effets de style rétro */
+.vintage-border::before,
+.vintage-border::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border: 2px solid var(--border-color);
+    pointer-events: none;
+}
+
+/* Décoration des chats */
+.cat-decoration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.cat-decoration img {
+    position: absolute;
+    width: 150px;
+    height: auto;
+    opacity: 0.8;
+    transition: transform 0.3s ease;
+}
+
+.cat-left {
+    top: -30px;
+    left: -30px;
+    transform: rotate(-15deg);
+}
+
+.cat-right {
+    top: -30px;
+    right: -30px;
+    transform: scaleX(-1) rotate(-15deg);
+}
+
+.vintage-border::before {
+    top: 10px;
+    left: 10px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.vintage-border::after {
+    bottom: 10px;
+    right: 10px;
+    border-left: none;
+    border-top: none;
+}
+
+/* Cacher les chats sur mobile */
+@media (max-width: 1024px) {
+    .cat-decoration {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    nav ul li {
+        margin: 5px 10px;
+    }
+    
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+    
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+}

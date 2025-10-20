@@ -1,0 +1,41 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.glacesitaliennes71.com/sitemap.xml
+
+# Pages principales autorisées
+Allow: /index.html
+Allow: /glaces.html
+Allow: /granites.html
+Allow: /pieces-detachees.html
+Allow: /pieces-detachees-2.html
+Allow: /forfait-granite.html
+Allow: /forfait-glaces.html
+Allow: /promotions.html
+Allow: /sav.html
+Allow: /contact.html
+
+# Page cachée du menu (basse priorité)
+Allow: /gouts.html
+
+# Dossiers système à bloquer
+Disallow: /admin/
+Disallow: /includes/
+Disallow: /config/
+Disallow: /temp/
+Disallow: /.git/
+
+# Fichiers techniques à bloquer
+Disallow: /*.md$
+Disallow: /PANIER_INSTRUCTIONS.md
+Disallow: /TEST_PANIER.md
+Disallow: /CONFIGURATION_FORMSPREE.md
+
+# Ressources statiques (CSS, JS, images) - crawlées mais non indexées
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Paramètres d'URL à ignorer
+Disallow: *?merci
+Disallow: *?produit=

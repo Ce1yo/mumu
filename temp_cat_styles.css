@@ -1,0 +1,122 @@
+/* Styles pour les chats décoratifs */
+.cat-decoration img {
+    width: 120px !important;
+    height: auto !important;
+}
+
+.cat-left {
+    top: 10px !important;
+    left: 50px !important;
+    transform: rotate(-10deg) !important;
+}
+
+.cat-right {
+    top: 10px !important;
+    right: 50px !important;
+    transform: scaleX(-1) rotate(-10deg) !important;
+}
+
+/* État vide pour la page promotions */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.empty-state p {
+    font-size: 1.5rem;
+    margin: 15px 0;
+    color: var(--text-color);
+}
+
+.empty-state .subtitle {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* Style pour le coût unitaire */
+.unit-price {
+    font-size: 0.95rem !important;
+    color: #666 !important;
+    font-style: italic !important;
+    margin-top: 5px !important;
+}
+
+/* Grille pour les forfaits - affichage côte à côte */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Limiter la largeur de la grille quand il n'y a qu'une seule card */
+.menu-grid:has(.menu-item:only-child) {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Alternative pour navigateurs ne supportant pas :has() */
+@supports not (selector(:has(*))) {
+    .menu-grid .menu-item:only-child {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+/* Responsive : une colonne sur mobile */
+@media (max-width: 768px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Boutons des cards en vertical et centrés - pour toutes les pages */
+.card-buttons,
+.machines-page .card-buttons,
+.products-page .card-buttons {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 auto !important;
+}
+
+.card-buttons .btn,
+.machines-page .card-buttons .btn,
+.products-page .card-buttons .btn {
+    width: 100% !important;
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* Réduire la marge du titre et de la section */
+.menu-section {
+    margin-bottom: 20px !important;
+}
+
+.menu-section h2 {
+    margin-bottom: 30px !important;
+}
+
+/* Centrer le contenu de la page promotions */
+.products-grid {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.empty-state {
+    max-width: 600px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+}
