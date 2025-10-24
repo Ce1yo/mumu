@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Rechercher dans tous les produits (sauf les goûts)
         for (const [productId, product] of Object.entries(productsData)) {
-            // Exclure les goûts de la recherche
-            if (productId.includes('gout')) {
+            // Exclure les goûts de la recherche (IDs qui commencent par 'granite-' mais pas les machines)
+            if (productId.startsWith('granite-') && !productId.includes('machine')) {
                 continue;
             }
             
