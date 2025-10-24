@@ -220,7 +220,7 @@ const productsData = {
             { name: 'Débit', value: '100-150 glaces/heure' },
             { name: 'Puissance', value: '0,75 kW' },
             { name: 'Dimensions', value: '75 x 55 x 93 cm' },
-            { name: 'Poids', value: '35 kg' }
+            { name: 'Poids', value: '100-130 kg' }
         ]
     },
     'machine-pieds': {
@@ -233,7 +233,7 @@ const productsData = {
             { name: 'Débit', value: '150 glaces/heure' },
             { name: 'Puissance', value: '1,1 kW' },
             { name: 'Dimensions', value: '75 x 55 x 133 cm' },
-            { name: 'Poids', value: '85 kg' }
+            { name: 'Poids', value: '100-130 kg' }
         ]
     },
     'machine-economique': {
@@ -246,7 +246,7 @@ const productsData = {
             { name: 'Débit', value: '150-200 glaces/heure' },
             { name: 'Puissance', value: '0,8 kW' },
             { name: 'Dimensions', value: '75 x 55 x 93 cm' },
-            { name: 'Poids', value: '28 kg' }
+            { name: 'Poids', value: '100-130 kg' }
         ]
     },
     'machine-professionnelle': {
@@ -259,7 +259,7 @@ const productsData = {
             { name: 'Débit', value: '200 glaces/heure' },
             { name: 'Puissance', value: '1,5 kW' },
             { name: 'Dimensions', value: '75 x 55 x 133 cm' },
-            { name: 'Poids', value: '95 kg' }
+            { name: 'Poids', value: '100-130 kg' }
         ]
     },
     'machine-compacte': {
@@ -272,7 +272,7 @@ const productsData = {
             { name: 'Débit', value: '300 glaces/heure' },
             { name: 'Puissance', value: '1,8 kW' },
             { name: 'Dimensions', value: '75 x 55 x 133 cm' },
-            { name: 'Poids', value: '90 kg' },
+            { name: 'Poids', value: '100-130 kg' },
             { name: 'Alimentation', value: '220-240V / 50Hz' },
             { name: 'Garantie', value: '1 ans' }
         ]
@@ -287,7 +287,7 @@ const productsData = {
             { name: 'Débit', value: '300 glaces/heure' },
             { name: 'Puissance', value: '1,8 kW' },
             { name: 'Dimensions', value: '75 x 55 x 133 cm' },
-            { name: 'Poids', value: '100 kg' },
+            { name: 'Poids', value: '100-130 kg' },
             { name: 'Alimentation', value: '220-240V / 50Hz' },
             { name: 'Garantie', value: '1 ans' }
         ]
@@ -302,7 +302,7 @@ const productsData = {
             { name: 'Débit', value: '400 glaces/heure' },
             { name: 'Puissance', value: '2,0 kW' },
             { name: 'Dimensions', value: '75 x 55 x 133 cm' },
-            { name: 'Poids', value: '110 kg' },
+            { name: 'Poids', value: '100-130 kg' },
             { name: 'Alimentation', value: '220-240V / 50Hz' },
             { name: 'Garantie', value: '1 ans' }
         ]
@@ -317,7 +317,7 @@ const productsData = {
             { name: 'Débit', value: '400 glaces/heure' },
             { name: 'Puissance', value: '2,2 kW' },
             { name: 'Dimensions', value: '75 x 55 x 133 cm' },
-            { name: 'Poids', value: '120 kg' },
+            { name: 'Poids', value: '100-130 kg' },
             { name: 'Alimentation', value: '380V triphasé' },
             { name: 'Garantie', value: '1 ans' }
         ]
@@ -1128,17 +1128,31 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
-        // Afficher uniquement les dimensions
+        // Afficher les dimensions et le poids
         if (modalSpecs) {
             if (product.specs && product.specs.length > 0) {
-                // Filtrer pour ne garder que les dimensions
+                // Filtrer pour ne garder que les dimensions et le poids
                 const dimensions = product.specs.find(spec => spec.name === 'Dimensions');
+                const poids = product.specs.find(spec => spec.name === 'Poids');
+                
+                let specsHTML = '';
                 if (dimensions) {
-                    modalSpecs.innerHTML = `
+                    specsHTML += `
                         <div class="spec-item">
                             <strong>${dimensions.name} :</strong> ${dimensions.value}
                         </div>
                     `;
+                }
+                if (poids) {
+                    specsHTML += `
+                        <div class="spec-item">
+                            <strong>${poids.name} :</strong> ${poids.value}
+                        </div>
+                    `;
+                }
+                
+                if (specsHTML) {
+                    modalSpecs.innerHTML = specsHTML;
                     modalSpecs.style.display = 'block';
                 } else {
                     modalSpecs.innerHTML = '';
