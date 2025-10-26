@@ -1,15 +1,24 @@
 // Récupérer les données du panier depuis localStorage
-const cartData = JSON.parse(localStorage.getItem('cart')) || [];
+const cartData = JSON.parse(localStorage.getItem('mumuCart')) || [];
+console.log('🛒 Données du panier récupérées:', cartData);
+console.log('🛒 Nombre d\'items:', cartData.length);
 
 // Afficher le récapitulatif
 function displayRecap() {
     const recapItems = document.getElementById('recapItems');
     const recapTotal = document.getElementById('recapTotal');
     
+    console.log('📋 displayRecap appelé');
+    console.log('📋 cartData.length:', cartData.length);
+    
     if (cartData.length === 0) {
+        console.log('❌ Panier vide, redirection vers index.html');
+        alert('ATTENTION: Le panier est vide ! Redirection vers l\'accueil...');
         window.location.href = 'index.html';
         return;
     }
+    
+    console.log('✅ Panier non vide, affichage du récapitulatif');
     
     let total = 0;
     let html = '';
