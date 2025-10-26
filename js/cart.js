@@ -268,7 +268,8 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Bouton requestQuote trouvé:', quoteBtn);
     if (quoteBtn) {
         console.log('Ajout de l\'événement click sur le bouton');
-        quoteBtn.addEventListener('click', () => {
+        quoteBtn.addEventListener('click', (e) => {
+            e.preventDefault(); // Empêcher le comportement par défaut
             console.log('Bouton cliqué !');
             cart.createQuote();
         });
