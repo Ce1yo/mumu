@@ -203,43 +203,22 @@ class ShoppingCart {
         }, 3000);
     }
 
-    // Créer un devis / demande
+    // Créer un devis / demande - Rediriger vers la page de commande
     createQuote() {
+        console.log('createQuote appelé, items:', this.items.length);
+        
         if (this.items.length === 0) {
             alert('Votre panier est vide !');
             return;
         }
 
-        // Créer le contenu du devis
-        let quoteContent = 'DEMANDE DE DEVIS - Mumu Glaces\n\n';
-        quoteContent += 'Articles commandés :\n';
-        quoteContent += '═════════════════════════════\n\n';
+        console.log('Redirection vers commande.html');
         
-        this.items.forEach((item, index) => {
-            quoteContent += `${index + 1}. ${item.title}\n`;
-            quoteContent += `   Prix unitaire : ${item.price}\n`;
-            quoteContent += `   Quantité : ${item.quantity}\n\n`;
-        });
+        // Fermer la modal du panier
+        this.closeCartModal();
         
-        quoteContent += '═════════════════════════════\n';
-        quoteContent += `TOTAL : ${this.getTotal().toFixed(2).replace('.', ',')} € HT\n`;
-        
-        // Ajouter note sur livraison si machines à glace
-        const hasMachines = this.items.some(item => 
-            item.id.includes('machine') || item.title.toLowerCase().includes('machine')
-        );
-        if (hasMachines) {
-            quoteContent += '\n📦 Livraison incluse pour les machines à glace\n';
-        }
-        
-        quoteContent += '\nMerci de me contacter pour finaliser cette commande.';
-
-        // Encoder le contenu pour l'URL
-        const subject = encodeURIComponent('Demande de devis - Mumu Glaces');
-        const body = encodeURIComponent(quoteContent);
-        
-        // Ouvrir le client mail
-        window.location.href = `mailto:calzolari.muriel@orange.fr?subject=${subject}&body=${body}`;
+        // Rediriger vers la page de commande
+        window.location.href = 'commande.html';
     }
 }
 
@@ -286,8 +265,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Bouton demander un devis
     const quoteBtn = document.getElementById('requestQuote');
+    console.log('Bouton requestQuote trouvé:', quoteBtn);
     if (quoteBtn) {
-        quoteBtn.addEventListener('click', () => cart.createQuote());
+        console.log('Ajout de l\'événement click sur le bouton');
+        quoteBtn.addEventListener('click', () => {
+            console.log('Bouton cliqué !');
+            cart.createQuote();
+        });
+    } else {
+        console.error('Bouton requestQuote non trouvé !');
     }
 
     // Fermer avec Échap

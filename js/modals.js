@@ -1145,7 +1145,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 if (poids) {
                     specsHTML += `
-                        <div class="spec-item">
+                        <div class="spec-item" style="margin-top: 25px;">
                             <strong>${poids.name} :</strong> ${poids.value}
                         </div>
                     `;
