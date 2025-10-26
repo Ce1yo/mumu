@@ -205,20 +205,32 @@ class ShoppingCart {
 
     // Créer un devis / demande - Rediriger vers la page de commande
     createQuote() {
-        console.log('createQuote appelé, items:', this.items.length);
+        console.log('🚀 createQuote appelé, items:', this.items.length);
         
         if (this.items.length === 0) {
             alert('Votre panier est vide !');
+            console.log('❌ Panier vide, arrêt');
             return;
         }
 
-        console.log('Redirection vers commande.html');
+        console.log('✅ Panier non vide, redirection...');
+        console.log('📍 URL actuelle:', window.location.href);
+        console.log('📍 Tentative de redirection vers: commande.html');
         
-        // Fermer la modal du panier
-        this.closeCartModal();
-        
-        // Rediriger vers la page de commande
-        window.location.href = 'commande.html';
+        try {
+            // Fermer la modal du panier
+            this.closeCartModal();
+            console.log('✅ Modal fermée');
+            
+            // Rediriger vers la page de commande IMMÉDIATEMENT avec replace
+            console.log('🔄 REDIRECTION FORCÉE vers commande.html');
+            const baseUrl = window.location.origin + window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
+            const commandeUrl = baseUrl + 'commande.html';
+            console.log('📍 URL complète de redirection:', commandeUrl);
+            window.location.replace(commandeUrl);
+        } catch (error) {
+            console.error('❌ ERREUR lors de la redirection:', error);
+        }
     }
 }
 
@@ -239,8 +251,19 @@ window.addEventListener('storage', function(e) {
     }
 });
 
+// Capturer TOUS les clics sur le document pour débogage
+document.addEventListener('click', (e) => {
+    if (e.target.id === 'requestQuote' || e.target.closest('#requestQuote')) {
+        console.log('🚨 CLICK CAPTURÉ PAR LE DOCUMENT sur requestQuote !');
+        console.log('🚨 Target:', e.target);
+        console.log('🚨 CurrentTarget:', e.currentTarget);
+    }
+}, true); // true = capture phase
+
 // Initialiser les événements quand le DOM est chargé
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('=== DOMContentLoaded - Initialisation cart.js ===');
+    
     // Fermer la modal panier
     const closeCartBtn = document.getElementById('closeCart');
     if (closeCartBtn) {
@@ -265,16 +288,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Bouton demander un devis
     const quoteBtn = document.getElementById('requestQuote');
-    console.log('Bouton requestQuote trouvé:', quoteBtn);
+    console.log('🔍 Bouton requestQuote trouvé:', quoteBtn);
+    console.log('🔍 Type du bouton:', quoteBtn?.type);
+    console.log('🔍 ID du bouton:', quoteBtn?.id);
+    
     if (quoteBtn) {
-        console.log('Ajout de l\'événement click sur le bouton');
-        quoteBtn.addEventListener('click', (e) => {
-            e.preventDefault(); // Empêcher le comportement par défaut
-            console.log('Bouton cliqué !');
+        console.log('✅ Ajout de l\'événement click sur le bouton');
+        
+        // Supprimer tout événement existant
+        const newBtn = quoteBtn.cloneNode(true);
+        quoteBtn.parentNode.replaceChild(newBtn, quoteBtn);
+        
+        newBtn.addEventListener('click', (e) => {
+            console.log('🎯 CLICK DETECTÉ sur le bouton !');
+            e.preventDefault();
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+            
+            console.log('🎯 Appel de cart.createQuote()...');
             cart.createQuote();
         });
+        
+        console.log('✅ Événement attaché avec succès');
     } else {
-        console.error('Bouton requestQuote non trouvé !');
+        console.error('❌ Bouton requestQuote NON TROUVÉ !');
     }
 
     // Fermer avec Échap
@@ -283,4 +320,6 @@ document.addEventListener('DOMContentLoaded', function() {
             cart.closeCartModal();
         }
     });
+    
+    console.log('=== Fin initialisation cart.js ===');
 });
