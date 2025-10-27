@@ -138,6 +138,9 @@ function displayCommandes(commandes) {
                     <button class="btn-action btn-details" onclick="copyOrderDetails('${commande.numeroCommande}')">
                         📋 Copier les détails
                     </button>
+                    <button class="btn-action" style="background: #e74c3c;" onclick="deleteOrder('${commande.numeroCommande}')">
+                        🗑️ Supprimer
+                    </button>
                 </div>
             </div>
         `;
@@ -170,6 +173,22 @@ async function updateStatut(numeroCommande) {
         } catch (error) {
             console.error('Erreur:', error);
             alert('Erreur lors de la mise à jour du statut');
+        }
+    }
+}
+
+// Supprimer une commande
+async function deleteOrder(numeroCommande) {
+    const commande = allCommandes.find(c => c.numeroCommande === numeroCommande);
+    
+    if (confirm(`⚠️ ATTENTION !\n\nÊtes-vous sûr de vouloir supprimer définitivement la commande ${numeroCommande} ?\n\nClient : ${commande.prenom} ${commande.nom}\nMontant : ${commande.total.toFixed(2)} € HT\n\nCette action est IRRÉVERSIBLE !`)) {
+        try {
+            await db.collection('commandes').doc(numeroCommande).delete();
+            alert('✅ Commande supprimée avec succès');
+            loadCommandes(); // Recharger la liste
+        } catch (error) {
+            console.error('Erreur:', error);
+            alert('❌ Erreur lors de la suppression de la commande');
         }
     }
 }

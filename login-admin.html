@@ -5,42 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion Admin - Mumu</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Roboto', sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 35px,
+                    rgba(231, 76, 60, 0.03) 35px,
+                    rgba(231, 76, 60, 0.03) 70px
+                );
+            pointer-events: none;
         }
         
         .login-container {
             background: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
             width: 90%;
-            max-width: 400px;
+            max-width: 450px;
+            position: relative;
+            z-index: 1;
+            border: 3px solid #e74c3c;
         }
         
         .login-header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
         
         .login-header h1 {
-            color: #2c3e50;
+            font-family: 'Playfair Display', serif;
+            color: #e74c3c;
             margin-bottom: 10px;
+            font-size: 2.5em;
         }
         
         .login-header p {
-            color: #7f8c8d;
+            color: #666;
+            font-size: 1.1em;
         }
         
         .lock-icon {
-            font-size: 60px;
+            font-size: 70px;
             margin-bottom: 20px;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.1));
         }
         
         .form-group {
@@ -56,38 +86,50 @@
         
         .form-group input {
             width: 100%;
-            padding: 12px;
+            padding: 14px 16px;
             border: 2px solid #ddd;
-            border-radius: 8px;
+            border-radius: 10px;
             font-size: 16px;
-            transition: border 0.3s;
+            transition: all 0.3s;
             box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
         }
         
         .form-group input:focus {
             outline: none;
-            border-color: #667eea;
+            border-color: #e74c3c;
+            box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
         }
         
         .btn-login {
             width: 100%;
-            padding: 15px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 16px;
+            background: #e74c3c;
             color: white;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             font-size: 18px;
             font-weight: bold;
             cursor: pointer;
-            transition: transform 0.2s;
+            transition: all 0.3s;
+            font-family: 'Roboto', sans-serif;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
         }
         
         .btn-login:hover {
+            background: #c0392b;
             transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
         }
         
         .btn-login:active {
             transform: translateY(0);
+        }
+        
+        .btn-login:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            box-shadow: none;
         }
         
         .error-message {
@@ -102,16 +144,36 @@
         
         .back-link {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
         }
         
         .back-link a {
-            color: #667eea;
+            color: #e74c3c;
             text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
         }
         
         .back-link a:hover {
+            color: #c0392b;
             text-decoration: underline;
+        }
+        
+        @media (max-width: 500px) {
+            .login-container {
+                padding: 30px 25px;
+                border-width: 2px;
+            }
+            
+            .login-header h1 {
+                font-size: 2em;
+            }
+            
+            .lock-icon {
+                font-size: 50px;
+            }
         }
     </style>
 </head>

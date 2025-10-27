@@ -53,11 +53,8 @@ service cloud.firestore {
       // Seuls les utilisateurs authentifiés peuvent lire
       allow read: if request.auth != null;
       
-      // Seuls les utilisateurs authentifiés peuvent modifier
-      allow update: if request.auth != null;
-      
-      // Personne ne peut supprimer
-      allow delete: if false;
+      // Seuls les utilisateurs authentifiés peuvent modifier et supprimer
+      allow update, delete: if request.auth != null;
     }
   }
 }
