@@ -276,8 +276,53 @@
         
         @media (max-width: 768px) {
             .admin-container {
-                margin: 80px 15px 30px;
+                margin: 60px 10px 20px;
                 padding: 15px;
+            }
+            
+            .admin-header h1 {
+                font-size: 1.5em;
+            }
+            
+            .admin-header p {
+                font-size: 0.9em;
+            }
+            
+            .admin-header > div {
+                flex-direction: column !important;
+                gap: 15px;
+            }
+            
+            .admin-header button {
+                width: 100%;
+            }
+            
+            .stats-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .stat-card {
+                margin: 0;
+            }
+            
+            .stat-card h3 {
+                font-size: 0.9em;
+            }
+            
+            .stat-card .value {
+                font-size: 1.5em;
+            }
+            
+            .filters {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .filters select,
+            .filters input,
+            .filters button {
+                width: 100%;
             }
             
             .commande-header {
@@ -286,25 +331,39 @@
                 gap: 10px;
             }
             
+            .commande-numero {
+                font-size: 1em;
+            }
+            
+            .statut-badge {
+                font-size: 0.85em;
+                padding: 4px 10px;
+            }
+            
+            .commande-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .client-info,
+            .commande-items {
+                font-size: 0.9em;
+            }
+            
             .commande-actions {
                 flex-direction: column;
+                gap: 8px;
             }
             
             .btn-action {
                 width: 100%;
+                font-size: 0.9em;
+                padding: 10px;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">
-                <a href="index.html">
-                    <img src="images/Logo Mumu.png" alt="Logo Mumu">
-                </a>
-            </div>
-        </nav>
     </header>
 
     <main>
@@ -313,7 +372,7 @@
             <div class="admin-header">
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                     <div>
-                        <h1>🛒 Gestion des Commandes</h1>
+                        <h1>Gestion des Commandes</h1>
                         <p>Tableau de bord des commandes en ligne</p>
                     </div>
                     <button onclick="logout()" style="padding: 10px 20px; background: #e74c3c; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">

@@ -161,9 +161,14 @@
             text-decoration: underline;
         }
         
-        @media (max-width: 500px) {
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
             .login-container {
-                padding: 30px 25px;
+                max-width: 100%;
+                padding: 40px 25px;
                 border-width: 2px;
             }
             
@@ -171,8 +176,44 @@
                 font-size: 2em;
             }
             
+            .login-header p {
+                font-size: 1em;
+            }
+            
+            .lock-icon {
+                font-size: 60px;
+            }
+            
+            .form-group input {
+                font-size: 16px; /* Évite le zoom automatique sur iOS */
+            }
+            
+            .btn-login {
+                font-size: 16px;
+                padding: 14px;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .login-container {
+                padding: 30px 20px;
+            }
+            
+            .login-header h1 {
+                font-size: 1.8em;
+            }
+            
             .lock-icon {
                 font-size: 50px;
+                margin-bottom: 15px;
+            }
+            
+            .form-group {
+                margin-bottom: 15px;
+            }
+            
+            .form-group input {
+                padding: 12px 14px;
             }
         }
     </style>
