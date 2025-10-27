@@ -297,24 +297,6 @@
     </style>
 </head>
 <body>
-    <!-- Firebase SDK pour Authentication -->
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
-    
-    <!-- Protection admin avec Firebase Authentication -->
-    <script>
-        // Vérifier l'authentification Firebase
-        firebase.auth().onAuthStateChanged((user) => {
-            if (!user) {
-                // Pas connecté, rediriger vers la page de login
-                window.location.href = 'login-admin.html';
-            } else {
-                console.log('✅ Utilisateur admin connecté:', user.email);
-                // Afficher la page (retirer le style display:none si vous en avez un)
-                document.body.style.display = 'block';
-            }
-        });
-    </script>
-    
     <header>
         <nav>
             <div class="logo">
@@ -383,12 +365,26 @@
         </div>
     </main>
 
-    <!-- Firebase SDK -->
+    <!-- Firebase SDK - L'ORDRE EST IMPORTANT -->
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
     
     <!-- Configuration Firebase -->
     <script src="js/firebase-config.js"></script>
+    
+    <!-- Protection admin avec Firebase Authentication -->
+    <script>
+        // Vérifier l'authentification Firebase
+        firebase.auth().onAuthStateChanged((user) => {
+            if (!user) {
+                // Pas connecté, rediriger vers la page de login
+                window.location.href = 'login-admin.html';
+            } else {
+                console.log('✅ Utilisateur admin connecté:', user.email);
+            }
+        });
+    </script>
     
     <!-- Script admin -->
     <script src="js/admin-commandes.js"></script>
