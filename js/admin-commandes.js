@@ -1,5 +1,19 @@
 let allCommandes = [];
 
+// Fonction de déconnexion avec Firebase
+async function logout() {
+    if (confirm('Êtes-vous sûr de vouloir vous déconnecter ?')) {
+        try {
+            await firebase.auth().signOut();
+            console.log('✅ Déconnexion réussie');
+            window.location.href = 'login-admin.html';
+        } catch (error) {
+            console.error('❌ Erreur de déconnexion:', error);
+            alert('Erreur lors de la déconnexion');
+        }
+    }
+}
+
 // Charger les commandes depuis Firebase
 async function loadCommandes() {
     const commandesList = document.getElementById('commandesList');
