@@ -119,6 +119,12 @@ function displayCommandes(commandes) {
                             <span>${item.price}</span>
                         </div>
                     `).join('')}
+                    ${commande.fraisLivraison && commande.fraisLivraison > 0 ? `
+                        <div class="item-row" style="color: #e74c3c; font-weight: 500; margin-top: 10px;">
+                            <span>📦 Frais de livraison (pièces détachées)</span>
+                            <span>${commande.fraisLivraison.toFixed(2).replace('.', ',')} €</span>
+                        </div>
+                    ` : ''}
                     <div class="commande-total">
                         Total : ${commande.total.toFixed(2).replace('.', ',')} € HT
                     </div>

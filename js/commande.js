@@ -3,6 +3,18 @@ const cartData = JSON.parse(localStorage.getItem('mumuCart')) || [];
 console.log('🛒 Données du panier récupérées:', cartData);
 console.log('🛒 Nombre d\'items:', cartData.length);
 
+// Frais de livraison
+const FRAIS_LIVRAISON_PIECES = 7.50;
+
+// Vérifier si le panier contient des pièces détachées
+function hasPiecesDetachees() {
+    return cartData.some(item => 
+        item.id.includes('piece') || 
+        item.title.toLowerCase().includes('pièce') ||
+        item.title.toLowerCase().includes('piece')
+    );
+}
+
 // Afficher le récapitulatif
 function displayRecap() {
     const recapItems = document.getElementById('recapItems');
@@ -22,6 +34,7 @@ function displayRecap() {
     
     let total = 0;
     let html = '';
+    const hasPieces = hasPiecesDetachees();
     
     cartData.forEach(item => {
         const price = parseFloat(item.price.replace(/[^\d,]/g, '').replace(',', '.'));
@@ -35,6 +48,17 @@ function displayRecap() {
             </div>
         `;
     });
+    
+    // Ajouter les frais de livraison si pièces détachées
+    if (hasPieces) {
+        html += `
+            <div class="recap-item" style="color: #e74c3c; font-weight: 500;">
+                <span>📦 Frais de livraison (pièces détachées)</span>
+                <span>${FRAIS_LIVRAISON_PIECES.toFixed(2).replace('.', ',')} €</span>
+            </div>
+        `;
+        total += FRAIS_LIVRAISON_PIECES;
+    }
     
     recapItems.innerHTML = html;
     recapTotal.textContent = total.toFixed(2).replace('.', ',') + ' € HT';
@@ -58,6 +82,12 @@ function calculateTotal() {
         const price = parseFloat(item.price.replace(/[^\d,]/g, '').replace(',', '.'));
         total += price * item.quantity;
     });
+    
+    // Ajouter les frais de livraison si pièces détachées
+    if (hasPiecesDetachees()) {
+        total += FRAIS_LIVRAISON_PIECES;
+    }
+    
     return total;
 }
 
@@ -74,6 +104,7 @@ document.getElementById('commandeForm').addEventListener('submit', async functio
         const orderNumber = generateOrderNumber();
         
         // Récupérer les données du formulaire
+        const hasPieces = hasPiecesDetachees();
         const formData = {
             numeroCommande: orderNumber,
             nom: document.getElementById('nom').value,
@@ -85,6 +116,7 @@ document.getElementById('commandeForm').addEventListener('submit', async functio
             ville: document.getElementById('ville').value,
             commentaire: document.getElementById('commentaire').value,
             panier: cartData,
+            fraisLivraison: hasPieces ? FRAIS_LIVRAISON_PIECES : 0,
             total: calculateTotal(),
             dateCommande: new Date().toISOString(),
             statut: 'En attente de paiement'
