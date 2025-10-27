@@ -46,11 +46,42 @@ async function loadCommandes() {
 function updateStats() {
     const total = allCommandes.length;
     const enAttente = allCommandes.filter(c => c.statut === 'En attente de paiement').length;
-    const ca = allCommandes.reduce((sum, c) => sum + (c.total || 0), 0);
+    
+    // Calculer le CA TTC (somme des totaux TTC)
+    const ca = allCommandes.reduce((sum, c) => {
+        const totals = calculateCommandeTotals(c);
+        return sum + totals.totalTTC;
+    }, 0);
     
     document.getElementById('statTotal').textContent = total;
     document.getElementById('statAttente').textContent = enAttente;
-    document.getElementById('statCA').textContent = ca.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' €';
+    document.getElementById('statCA').textContent = ca.toFixed(2).replace('.', ',').replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' € TTC';
+}
+
+// Calculer HT et TTC d'une commande
+function calculateCommandeTotals(commande) {
+    let totalHT = 0;
+    let totalTVA = 0;
+    
+    // Calculer pour chaque item du panier
+    commande.panier.forEach(item => {
+        const price = parseFloat(item.price.replace(/[^\d,]/g, '').replace(',', '.'));
+        const itemTotal = price * item.quantity;
+        totalHT += itemTotal;
+        
+        const tvaRate = item.tvaRate || 0.20;
+        totalTVA += itemTotal * tvaRate;
+    });
+    
+    // Ajouter les frais de livraison (TVA 20%)
+    if (commande.fraisLivraison && commande.fraisLivraison > 0) {
+        totalHT += commande.fraisLivraison;
+        totalTVA += commande.fraisLivraison * 0.20;
+    }
+    
+    const totalTTC = totalHT + totalTVA;
+    
+    return { totalHT, totalTVA, totalTTC };
 }
 
 // Afficher les commandes
@@ -125,9 +156,16 @@ function displayCommandes(commandes) {
                             <span>${commande.fraisLivraison.toFixed(2).replace('.', ',')} €</span>
                         </div>
                     ` : ''}
-                    <div class="commande-total">
-                        Total : ${commande.total.toFixed(2).replace('.', ',')} € HT
-                    </div>
+                    ${(() => {
+                        const totals = calculateCommandeTotals(commande);
+                        return `
+                            <div class="commande-total" style="font-size: 1em; text-align: right; margin-top: 15px; padding-top: 10px; border-top: 2px solid #ddd;">
+                                <div style="font-size: 0.85em; color: #666; margin-bottom: 3px;">Total HT : ${totals.totalHT.toFixed(2).replace('.', ',')} €</div>
+                                <div style="font-size: 0.85em; color: #666; margin-bottom: 5px;">TVA : ${totals.totalTVA.toFixed(2).replace('.', ',')} €</div>
+                                <div style="font-size: 1.3em; font-weight: bold; color: #27ae60;">Total TTC : ${totals.totalTTC.toFixed(2).replace('.', ',')} €</div>
+                            </div>
+                        `;
+                    })()}
                 </div>
                 
                 ${commande.commentaire ? `
@@ -186,8 +224,9 @@ async function updateStatut(numeroCommande) {
 // Supprimer une commande
 async function deleteOrder(numeroCommande) {
     const commande = allCommandes.find(c => c.numeroCommande === numeroCommande);
+    const totals = calculateCommandeTotals(commande);
     
-    if (confirm(`⚠️ ATTENTION !\n\nÊtes-vous sûr de vouloir supprimer définitivement la commande ${numeroCommande} ?\n\nClient : ${commande.prenom} ${commande.nom}\nMontant : ${commande.total.toFixed(2)} € HT\n\nCette action est IRRÉVERSIBLE !`)) {
+    if (confirm(`⚠️ ATTENTION !\n\nÊtes-vous sûr de vouloir supprimer définitivement la commande ${numeroCommande} ?\n\nClient : ${commande.prenom} ${commande.nom}\nMontant : ${totals.totalTTC.toFixed(2)} € TTC\n\nCette action est IRRÉVERSIBLE !`)) {
         try {
             await db.collection('commandes').doc(numeroCommande).delete();
             alert('✅ Commande supprimée avec succès');
@@ -202,6 +241,7 @@ async function deleteOrder(numeroCommande) {
 // Copier les détails de la commande
 function copyOrderDetails(numeroCommande) {
     const commande = allCommandes.find(c => c.numeroCommande === numeroCommande);
+    const totals = calculateCommandeTotals(commande);
     
     let text = `COMMANDE ${commande.numeroCommande}\n`;
     text += `═══════════════════════════════\n\n`;
@@ -213,7 +253,14 @@ function copyOrderDetails(numeroCommande) {
     commande.panier.forEach(item => {
         text += `- ${item.title} x${item.quantity} : ${item.price}\n`;
     });
-    text += `\nTotal : ${commande.total.toFixed(2)} € HT\n`;
+    if (commande.fraisLivraison && commande.fraisLivraison > 0) {
+        text += `- Frais de livraison : ${commande.fraisLivraison.toFixed(2)} €\n`;
+    }
+    text += `\n─────────────────────────────\n`;
+    text += `Total HT : ${totals.totalHT.toFixed(2)} €\n`;
+    text += `TVA : ${totals.totalTVA.toFixed(2)} €\n`;
+    text += `Total TTC : ${totals.totalTTC.toFixed(2)} €\n`;
+    text += `─────────────────────────────\n`;
     text += `Statut : ${commande.statut}\n`;
     
     if (commande.commentaire) {

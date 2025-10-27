@@ -26,12 +26,16 @@ class ShoppingCart {
         if (existingItem) {
             existingItem.quantity += 1;
         } else {
+            // Déterminer le taux de TVA : 10% pour forfaits glaces/granité, 20% pour le reste
+            const tvaRate = (productId.startsWith('forfait-glaces') || productId.startsWith('forfait-granite')) ? 0.10 : 0.20;
+            
             this.items.push({
                 id: productId,
                 title: product.title,
                 price: product.price,
                 image: product.image,
-                quantity: 1
+                quantity: 1,
+                tvaRate: tvaRate
             });
         }
         
@@ -70,14 +74,35 @@ class ShoppingCart {
         }
     }
 
-    // Calculer le total
-    getTotal() {
+    // Calculer le total HT
+    getTotalHT() {
         return this.items.reduce((total, item) => {
             // Extraire le prix numérique
             const priceStr = item.price.replace(/[^\d,.-]/g, '').replace(',', '.');
             const price = parseFloat(priceStr) || 0;
             return total + (price * item.quantity);
         }, 0);
+    }
+
+    // Calculer le montant total de la TVA
+    getTotalTVA() {
+        return this.items.reduce((totalTVA, item) => {
+            // Extraire le prix numérique
+            const priceStr = item.price.replace(/[^\d,.-]/g, '').replace(',', '.');
+            const price = parseFloat(priceStr) || 0;
+            const tvaRate = item.tvaRate || 0.20; // Par défaut 20%
+            return totalTVA + (price * item.quantity * tvaRate);
+        }, 0);
+    }
+
+    // Calculer le total TTC
+    getTotalTTC() {
+        return this.getTotalHT() + this.getTotalTVA();
+    }
+
+    // Méthode de compatibilité (appelle getTotalHT)
+    getTotal() {
+        return this.getTotalHT();
     }
 
     // Obtenir le nombre total d'articles
@@ -145,12 +170,15 @@ class ShoppingCart {
 
         if (emptyCartMessage) emptyCartMessage.style.display = 'none';
 
-        cartItemsContainer.innerHTML = this.items.map(item => `
+        cartItemsContainer.innerHTML = this.items.map(item => {
+            const tvaRate = item.tvaRate || 0.20;
+            const tvaLabel = tvaRate === 0.10 ? '(TVA 10%)' : '(TVA 20%)';
+            return `
             <div class="cart-item" data-product-id="${item.id}">
                 <img src="${item.image}" alt="${item.title}" class="cart-item-image">
                 <div class="cart-item-details">
                     <h4>${item.title}</h4>
-                    <p class="cart-item-price">${item.price}</p>
+                    <p class="cart-item-price">${item.price} <span style="font-size: 0.85em; color: #666;">${tvaLabel}</span></p>
                 </div>
                 <div class="cart-item-quantity">
                     <button class="quantity-btn" onclick="cart.updateQuantity('${item.id}', ${item.quantity - 1})">−</button>
@@ -163,10 +191,21 @@ class ShoppingCart {
                     <span>✕</span>
                 </button>
             </div>
-        `).join('');
+            `;
+        }).join('');
 
         if (cartTotal) {
-            cartTotal.textContent = this.getTotal().toFixed(2).replace('.', ',') + ' €';
+            const totalHT = this.getTotalHT();
+            const totalTVA = this.getTotalTVA();
+            const totalTTC = this.getTotalTTC();
+            
+            cartTotal.innerHTML = `
+                <div style="text-align: right;">
+                    <div style="font-size: 0.9em; color: #666; margin-bottom: 5px;">Total HT : ${totalHT.toFixed(2).replace('.', ',')} €</div>
+                    <div style="font-size: 0.9em; color: #666; margin-bottom: 5px;">TVA : ${totalTVA.toFixed(2).replace('.', ',')} €</div>
+                    <div style="font-size: 1.2em; font-weight: bold; color: #333;">Total TTC : ${totalTTC.toFixed(2).replace('.', ',')} €</div>
+                </div>
+            `;
         }
 
         // Vérifier si le panier contient des machines à glace

@@ -32,36 +32,44 @@ function displayRecap() {
     
     console.log('✅ Panier non vide, affichage du récapitulatif');
     
-    let total = 0;
+    let totalHT = 0;
+    let totalTVA = 0;
     let html = '';
     const hasPieces = hasPiecesDetachees();
     
     cartData.forEach(item => {
         const price = parseFloat(item.price.replace(/[^\d,]/g, '').replace(',', '.'));
         const itemTotal = price * item.quantity;
-        total += itemTotal;
+        totalHT += itemTotal;
+        
+        // Calculer la TVA pour cet item (10% pour forfaits, 20% pour le reste)
+        const tvaRate = item.tvaRate || 0.20;
+        totalTVA += itemTotal * tvaRate;
+        
+        // Afficher le prix TTC (HT + TVA)
+        const itemTTC = itemTotal * (1 + tvaRate);
         
         html += `
             <div class="recap-item">
                 <span>${item.title} x ${item.quantity}</span>
-                <span>${itemTotal.toFixed(2).replace('.', ',')} €</span>
+                <span>${itemTTC.toFixed(2).replace('.', ',')} €</span>
             </div>
         `;
     });
     
-    // Ajouter les frais de livraison si pièces détachées
+    // Ajouter les frais de livraison si pièces détachées (inclus dans le total)
     if (hasPieces) {
-        html += `
-            <div class="recap-item" style="color: #e74c3c; font-weight: 500;">
-                <span>📦 Frais de livraison (pièces détachées)</span>
-                <span>${FRAIS_LIVRAISON_PIECES.toFixed(2).replace('.', ',')} €</span>
-            </div>
-        `;
-        total += FRAIS_LIVRAISON_PIECES;
+        totalHT += FRAIS_LIVRAISON_PIECES;
+        totalTVA += FRAIS_LIVRAISON_PIECES * 0.20;
     }
     
+    const totalTTC = totalHT + totalTVA;
+    
     recapItems.innerHTML = html;
-    recapTotal.textContent = total.toFixed(2).replace('.', ',') + ' € HT';
+    recapTotal.innerHTML = `
+        <div style="font-size: 1.2em; font-weight: bold; color: #2c3e50;">Total TTC : ${totalTTC.toFixed(2).replace('.', ',')} €</div>
+        <div style="font-size: 0.85em; color: #666; margin-top: 5px; font-style: italic;">Frais de livraison inclus</div>
+    `;
 }
 
 // Générer un numéro de commande unique
@@ -75,20 +83,42 @@ function generateOrderNumber() {
     return `CMD-${year}${month}${day}-${random}`;
 }
 
-// Calculer le total
-function calculateTotal() {
-    let total = 0;
+// Calculer le total HT
+function calculateTotalHT() {
+    let totalHT = 0;
     cartData.forEach(item => {
         const price = parseFloat(item.price.replace(/[^\d,]/g, '').replace(',', '.'));
-        total += price * item.quantity;
+        totalHT += price * item.quantity;
     });
     
     // Ajouter les frais de livraison si pièces détachées
     if (hasPiecesDetachees()) {
-        total += FRAIS_LIVRAISON_PIECES;
+        totalHT += FRAIS_LIVRAISON_PIECES;
     }
     
-    return total;
+    return totalHT;
+}
+
+// Calculer la TVA totale
+function calculateTotalTVA() {
+    let totalTVA = 0;
+    cartData.forEach(item => {
+        const price = parseFloat(item.price.replace(/[^\d,]/g, '').replace(',', '.'));
+        const tvaRate = item.tvaRate || 0.20;
+        totalTVA += price * item.quantity * tvaRate;
+    });
+    
+    // Ajouter la TVA sur les frais de livraison (20%)
+    if (hasPiecesDetachees()) {
+        totalTVA += FRAIS_LIVRAISON_PIECES * 0.20;
+    }
+    
+    return totalTVA;
+}
+
+// Calculer le total TTC
+function calculateTotal() {
+    return calculateTotalHT() + calculateTotalTVA();
 }
 
 // Gérer la soumission du formulaire
