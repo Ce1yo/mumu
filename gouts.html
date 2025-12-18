@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Goûts - Bienvenue chez Mumu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/cookies.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="temp_cat_styles.css">
+</head>
+<body class="products-page">
+    <div class="vintage-border">
+        <div class="cat-decoration">
+            <img src="images/Portrait de chat vintage.png" alt="Décoration chat vintage" class="cat-left">
+            <img src="images/ChatGPT Image 29 sept. 2025 à 22_39_25.png" alt="Décoration chat moderne" class="cat-right">
+        </div>
+        <header>
+            <h1>Nos Goûts de Glaces</h1>
+            <p class="subtitle">La marchande de glaces</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="glaces.html">Machines Glaces</a></li>
+                <li><a href="granites.html">Machines Granité</a></li>
+                <li><a href="pieces-detachees.html">Pièces Détachées Machines à Granité</a></li>
+                <li><a href="pieces-detachees-2.html">Pièces Détachées Machines à Glace</a></li>
+                <li><a href="forfait-granite.html">Forfait Granité</a></li>
+                <li><a href="forfait-glaces.html">Forfait Glaces</a></li>
+                <li><a href="promotions.html">Promotions</a></li>
+                <li><a href="sav.html">SAV & Rachat</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="cart-link-container">
+                    <a href="#" id="cartIcon" class="cart-link">
+                        Panier
+                        <span class="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <main>
+            <section class="info-section">
+                <h2>Découvrez l'économie avec nos sirops concentrés</h2>
+                <div class="info-content">
+                    <div class="info-text">
+                        <p>Avec seulement 2 litres de concentré de sirops achetés chez Mumu et la qualité exceptionnelle de nos machines à granité, vous obtiendrez jusqu'à 550 verres de 20cl de granité !</p>
+                        
+                        <h3>Exemple de préparation :</h3>
+                        <ul>
+                            <li>Prenez 20cl de sirop Mumu</li>
+                            <li>Ajoutez 1kg de sucre en poudre</li>
+                            <li>Mélangez avec 8 litres d'eau</li>
+                            <li>Le foisonnement de la glace (minimum 15%) vous donnera environ 10,5 litres de produit fini</li>
+                        </ul>
+                        
+                        <p class="highlight">Nos machines à granité 12 litres sont parfaitement adaptées pour ce volume, évitant tout débordement et assurant une préparation optimale.</p>
+                        
+                        <p class="note">Ces conseils et bien d'autres sont réservés à nos clients privilégiés. Alors n'attendez plus, faites le bon calcul et rejoignez-nous vite !</p>
+                    </div>
+                    <div class="info-image">
+                        <img src="images/granites.png" alt="Exemple de granité">
+                    </div>
+                </div>
+            </section>
+
+            <section class="menu-section">
+                <h2>Nos Goûts de Granité</h2>
+                <div class="menu-grid">
+                    <div class="menu-item" data-product-id="granite-barbe-a-papa">
+                        <div class="card-image">
+                            <img src="images/Gouts granite/1 baniere granité barbe a papa.png" alt="Barbe à Papa">
+                        </div>
+                        <div class="card-content">
+                            <h3>Barbe à Papa</h3>
+                            <p>2L</p>
+                            <p class="price">19,90 € HT</p>
+                            <p>Doux et sucré comme à la fête foraine</p>
+                            <div class="card-buttons">
+                                <a href="#" class="btn">En savoir plus</a>
+                                <a href="#" class="btn btn-cart">Ajouter au panier</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-product-id="granite-citron">
+                        <div class="card-image">
+                            <img src="images/Gouts granite/2 baniere granité citron.png" alt="Citron">
+                        </div>
+                        <div class="card-content">
+                            <h3>Citron</h3>
+                            <p>2L</p>
+                            <p class="price">19,90 € HT</p>
+                            <p>Acidulé et rafraîchissant</p>
+                            <div class="card-buttons">
+                                <a href="#" class="btn">En savoir plus</a>
+                                <a href="#" class="btn btn-cart">Ajouter au panier</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-product-id="granite-fraise">
+                        <div class="card-image">
+                            <img src="images/Gouts granite/3 baniere granité fraise.png" alt="Fraise">
+                        </div>
+                        <div class="card-content">
+                            <h3>Fraise</h3>
+                            <p>2L</p>
+                            <p class="price">19,90 € HT</p>
+                            <p>Doux et fruité</p>
+                            <div class="card-buttons">
+                                <a href="#" class="btn">En savoir plus</a>
+                                <a href="#" class="btn btn-cart">Ajouter au panier</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-product-id="granite-kiwi-banane">
+                        <div class="card-image">
+                            <img src="images/Gouts granite/4 baniere granité kiwi banane.png" alt="Kiwi Banane">
+                        </div>
+                        <div class="card-content">
+                            <h3>Kiwi Banane</h3>
+                            <p>2L</p>
+                            <p class="price">19,90 € HT</p>
+                            <p>Exotique et équilibré</p>
+                            <div class="card-buttons">
+                                <a href="#" class="btn">En savoir plus</a>
+                                <a href="#" class="btn btn-cart">Ajouter au panier</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-product-id="granite-cola">
+                        <div class="card-image">
+                            <img src="images/Gouts granite/5 baniere granité cola.png" alt="Cola">
+                        </div>
+                        <div class="card-content">
+                            <h3>Cola</h3>
+                            <p>2L</p>
+                            <p class="price">19,90 € HT</p>
+                            <p>Classique et pétillant</p>
+                            <div class="card-buttons">
+                                <a href="#" class="btn">En savoir plus</a>
+                                <a href="#" class="btn btn-cart">Ajouter au panier</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-product-id="granite-mangue">
+                        <div class="card-image">
+                            <img src="images/Gouts granite/6 baniere granité mangue.png" alt="Mangue">
+                        </div>
+                        <div class="card-content">
+                            <h3>Mangue</h3>
+                            <p>2L</p>
+                            <p class="price">19,90 € HT</p>
+                            <p>Exotique et sucré</p>
+                            <div class="card-buttons">
+                                <a href="#" class="btn">En savoir plus</a>
+                                <a href="#" class="btn btn-cart">Ajouter au panier</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-product-id="granite-mangue-goyave">
+                        <div class="card-image">
+                            <img src="images/Gouts granite/7 naniere granité mangue goyave.png" alt="Mangue Goyave">
+                        </div>
+                        <div class="card-content">
+                            <h3>Mangue Goyave</h3>
+                            <p>2L</p>
+                            <p class="price">19,90 € HT</p>
+                            <p>Tropical et parfumé</p>
+                            <div class="card-buttons">
+                                <a href="#" class="btn">En savoir plus</a>
+                                <a href="#" class="btn btn-cart">Ajouter au panier</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-product-id="granite-melon">
+                        <div class="card-image">
+                            <img src="images/Gouts granite/8 baniere granité melon.png" alt="Melon">
+                        </div>
+                        <div class="card-content">
+                            <h3>Melon</h3>
+                            <p>2L</p>
+                            <p class="price">19,90 € HT</p>
+                            <p>Doux et désaltérant</p>
+                            <div class="card-buttons">
+                                <a href="#" class="btn">En savoir plus</a>
+                                <a href="#" class="btn btn-cart">Ajouter au panier</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-product-id="granite-melon-mangue">
+                        <div class="card-image">
+                            <img src="images/Gouts granite/9 baniere granité melon mangue.png" alt="Melon Mangue">
+                        </div>
+                        <div class="card-content">
+                            <h3>Melon Mangue</h3>
+                            <p>2L</p>
+                            <p class="price">19,90 € HT</p>
+                            <p>Harmonie de saveurs fruitées</p>
+                            <div class="card-buttons">
+                                <a href="#" class="btn">En savoir plus</a>
+                                <a href="#" class="btn btn-cart">Ajouter au panier</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-product-id="granite-orange-sanguine">
+                        <div class="card-image">
+                            <img src="images/Gouts granite/10 baniere granité orange sanguine.png" alt="Orange Sanguine">
+                        </div>
+                        <div class="card-content">
+                            <h3>Orange Sanguine</h3>
+                            <p>2L</p>
+                            <p class="price">19,90 € HT</p>
+                            <p>Doux légèrement acidulé</p>
+                            <div class="card-buttons">
+                                <a href="#" class="btn">En savoir plus</a>
+                                <a href="#" class="btn btn-cart">Ajouter au panier</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-product-id="granite-fruit-passion">
+                        <div class="card-image">
+                            <img src="images/Gouts granite/11 baniere granité passion.png" alt="Fruit de la Passion">
+                        </div>
+                        <div class="card-content">
+                            <h3>Fruit de la Passion</h3>
+                            <p>2L</p>
+                            <p class="price">19,90 € HT</p>
+                            <p>Acidulé et intense</p>
+                            <div class="card-buttons">
+                                <a href="#" class="btn">En savoir plus</a>
+                                <a href="#" class="btn btn-cart">Ajouter au panier</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-product-id="granite-pasteque">
+                        <div class="card-image">
+                            <img src="images/Gouts granite/12 baniere granité pasteque.png" alt="Pastèque">
+                        </div>
+                        <div class="card-content">
+                            <h3>Pastèque</h3>
+                            <p>2L</p>
+                            <p class="price">19,90 € HT</p>
+                            <p>Léger et rafraîchissant</p>
+                            <div class="card-buttons">
+                                <a href="#" class="btn">En savoir plus</a>
+                                <a href="#" class="btn btn-cart">Ajouter au panier</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-product-id="granite-pomme-verte">
+                        <div class="card-image">
+                            <img src="images/Gouts granite/13 baniere granité pomme verte.png" alt="Pomme Verte">
+                        </div>
+                        <div class="card-content">
+                            <h3>Pomme Verte</h3>
+                            <p>2L</p>
+                            <p class="price">19,90 € HT</p>
+                            <p>Fraîcheur garantie</p>
+                            <div class="card-buttons">
+                                <a href="#" class="btn">En savoir plus</a>
+                                <a href="#" class="btn btn-cart">Ajouter au panier</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-product-id="granite-the-peche">
+                        <div class="card-image">
+                            <img src="images/Gouts granite/14 baniere granité thé peche.png" alt="Thé Pêche">
+                        </div>
+                        <div class="card-content">
+                            <h3>Thé Pêche</h3>
+                            <p>2L</p>
+                            <p class="price">19,90 € HT</p>
+                            <p>Délicat et parfumé</p>
+                            <div class="card-buttons">
+                                <a href="#" class="btn">En savoir plus</a>
+                                <a href="#" class="btn btn-cart">Ajouter au panier</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-product-id="granite-tropical-bleu">
+                        <div class="card-image">
+                            <img src="images/Gouts granite/15 baniere granité tropical bleue.png" alt="Tropical Bleu">
+                        </div>
+                        <div class="card-content">
+                            <h3>Tropical Bleu</h3>
+                            <p>2L</p>
+                            <p class="price">19,90 € HT</p>
+                            <p>Exotique et surprenant</p>
+                            <div class="card-buttons">
+                                <a href="#" class="btn">En savoir plus</a>
+                                <a href="#" class="btn btn-cart">Ajouter au panier</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item" data-product-id="granite-menthe-verte">
+                        <div class="card-image">
+                            <img src="images/Gouts granite/16 baniere granité menthe verte.png" alt="Menthe Verte">
+                        </div>
+                        <div class="card-content">
+                            <h3>Menthe Verte</h3>
+                            <p>2L</p>
+                            <p class="price">19,90 € HT</p>
+                            <p>Fraîcheur intense</p>
+                            <div class="card-buttons">
+                                <a href="#" class="btn">En savoir plus</a>
+                                <a href="#" class="btn btn-cart">Ajouter au panier</a>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+        </main>
+
+        <footer id="contact">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Horaires</h3>
+                    <p>Du lundi au samedi</p>
+                    <p>8h - 20h</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>06 86 18 07 68</p>
+                    <p>calzolari.muriel@orange.fr</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Suivez-nous</h3>
+                    <div class="social-links">
+                        <a href="#">Instagram</a>
+                        <a href="#">Facebook</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mumu - Glaces Italiennes & Granités. Tous droits réservés. | <a href="mentions-legales.html" style="color: #fff; text-decoration: underline;">Mentions Légales</a></p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modale de détails du produit -->
+    <div id="productModal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal">&times;</button>
+            <div class="modal-header">
+                <h2 id="modalProductTitle">Titre du produit</h2>
+                <div class="modal-price" id="modalProductPrice">Prix</div>
+            </div>
+            <div class="modal-body">
+                <img src="" alt="" class="modal-image" id="modalProductImage">
+                <div class="modal-specs" id="modalProductSpecs">
+                    <!-- Les spécifications seront ajoutées dynamiquement -->
+                </div>
+                <div class="modal-description" id="modalProductDescription">
+                    Description détaillée du produit...
+                </div>
+                <div class="modal-actions">
+                    <a href="#" class="btn btn-cart" id="modalAddToCart">Ajouter au panier</a>
+                    <a href="#" class="btn" id="modalContactUs">Nous contacter</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal du Panier -->
+    <div id="cartModal" class="cart-modal">
+        <div class="cart-modal-content">
+            <div class="cart-modal-header">
+                <h2>🛒 Mon Panier</h2>
+                <button id="closeCart" class="cart-close">&times;</button>
+            </div>
+            <div class="cart-modal-body">
+                <div id="emptyCartMessage" class="empty-cart-message">
+                    <p>Votre panier est vide</p>
+                    <a href="glaces.html" class="btn">Découvrir nos produits</a>
+                </div>
+                <div id="cartItems" class="cart-items"></div>
+            </div>
+            <div class="cart-modal-footer">
+                <div class="cart-total" id="cartTotal">
+                    0,00 €
+                </div>
+                <div id="deliveryNote" class="delivery-note" style="display: none;">
+                    📦 Livraison incluse pour les machines à glace
+                </div>
+                <div class="cart-actions">
+                    <button type="button" id="requestQuote" class="cart-btn cart-btn-primary">Valider le panier</button>
+                    <button type="button" id="clearCart" class="cart-btn cart-btn-secondary">Vider le panier</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/cart.js"></script>
+    <script src="js/modals.js"></script>
+    <script src="js/cookies.js"></script>
+</body>
+</html>

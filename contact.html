@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Bienvenue chez Mumu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/cookies.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="temp_cat_styles.css">
+</head>
+<body>
+    <div class="vintage-border">
+        <div class="cat-decoration">
+            <img src="images/Portrait de chat vintage.png" alt="Décoration chat vintage" class="cat-left">
+            <img src="images/ChatGPT Image 29 sept. 2025 à 22_39_25.png" alt="Décoration chat moderne" class="cat-right">
+        </div>
+        <header>
+            <h1>Contactez-nous</h1>
+            <p class="subtitle">Une question ? On vous répond avec le sourire</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="glaces.html">Machines Glaces</a></li>
+                <li><a href="granites.html">Machines Granité</a></li>
+                <li><a href="pieces-detachees.html">Pièces Détachées Machines à Granité</a></li>
+                <li><a href="pieces-detachees-2.html">Pièces Détachées Machines à Glace</a></li>
+                <li><a href="forfait-granite.html">Forfait Granité</a></li>
+                <li><a href="forfait-glaces.html">Forfait Glaces</a></li>
+                <li><a href="promotions.html">Promotions</a></li>
+                <li><a href="sav.html">SAV & Rachat</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="login-admin.html" style="color: #e74c3c;">Admin</a></li>
+                <li class="cart-link-container">
+                    <a href="#" id="cartIcon" class="cart-link">
+                        Panier
+                        <span class="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <main>
+            <section class="menu-section">
+                <h2>Contactez-nous</h2>
+            </section>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <h3>Nous contacter</h3>
+                        <p><strong>Téléphone :</strong><br>06 86 18 07 68</p>
+                        <p><strong>Email :</strong><br>calzolari.muriel@orange.fr</p>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h2>Envoyez-nous un message</h2>
+                    <!-- 
+                    CONFIGURATION FORMSPREE :
+                    1. Créez un compte sur https://formspree.io
+                    2. Créez un nouveau formulaire
+                    3. Remplacez "VOTRE_FORMSPREE_ID" ci-dessous par votre ID unique
+                    -->
+                    <form action="https://formspree.io/f/mdkwdvar" method="POST">
+                        <div class="form-group">
+                            <label for="name">Votre nom</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Votre email</label>
+                            <input type="email" id="email" name="_replyto" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Sujet</label>
+                            <input type="text" id="subject" name="_subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Votre message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        
+                        <!-- Champs cachés pour Formspree -->
+                        <input type="hidden" name="_next" value="https://www.glacesitaliennes71.com/contact.html?merci">
+                        <input type="text" name="_gotcha" style="display:none">
+                        
+                        <button type="submit" class="btn-submit">Envoyer le message</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <footer id="contact">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Horaires</h3>
+                    <p>Du lundi au samedi</p>
+                    <p>8h - 20h</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>06 86 18 07 68</p>
+                    <p>calzolari.muriel@orange.fr</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Suivez-nous</h3>
+                    <div class="social-links">
+                        <a href="#">Instagram</a>
+                        <a href="#">Facebook</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mumu - Glaces Italiennes & Granités. Tous droits réservés. | <a href="mentions-legales.html" style="color: #fff; text-decoration: underline;">Mentions Légales</a></p>
+            </div>
+        </footer>
+    </div>
+    <!-- Modal du Panier -->
+    <div id="cartModal" class="cart-modal">
+        <div class="cart-modal-content">
+            <div class="cart-modal-header">
+                <h2>🛒 Mon Panier</h2>
+                <button id="closeCart" class="cart-close">&times;</button>
+            </div>
+            <div class="cart-modal-body">
+                <div id="emptyCartMessage" class="empty-cart-message">
+                    <p>Votre panier est vide</p>
+                    <a href="glaces.html" class="btn">Découvrir nos produits</a>
+                </div>
+                <div id="cartItems" class="cart-items"></div>
+            </div>
+            <div class="cart-modal-footer">
+                <div class="cart-total" id="cartTotal">
+                    0,00 €
+                </div>
+                <div id="deliveryNote" class="delivery-note" style="display: none;">
+                    📦 Livraison incluse pour les machines à glace
+                </div>
+                <div class="cart-actions">
+                    <button type="button" id="requestQuote" class="cart-btn cart-btn-primary">Valider le panier</button>
+                    <button type="button" id="clearCart" class="cart-btn cart-btn-secondary">Vider le panier</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/cart.js"></script>
+    <script src="js/cookies.js"></script>
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion Admin - Mumu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Roboto', sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 35px,
+                    rgba(231, 76, 60, 0.03) 35px,
+                    rgba(231, 76, 60, 0.03) 70px
+                );
+            pointer-events: none;
+        }
+        
+        .login-container {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            width: 90%;
+            max-width: 450px;
+            position: relative;
+            z-index: 1;
+            border: 3px solid #e74c3c;
+        }
+        
+        .login-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+        
+        .login-header h1 {
+            font-family: 'Playfair Display', serif;
+            color: #e74c3c;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        
+        .login-header p {
+            color: #666;
+            font-size: 1.1em;
+        }
+        
+        .lock-icon {
+            font-size: 70px;
+            margin-bottom: 20px;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.1));
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: #e74c3c;
+            box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+        }
+        
+        .btn-login {
+            width: 100%;
+            padding: 16px;
+            background: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Roboto', sans-serif;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+        
+        .btn-login:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+        }
+        
+        .btn-login:active {
+            transform: translateY(0);
+        }
+        
+        .btn-login:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+        
+        .error-message {
+            background: #fee;
+            color: #c33;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+            text-align: center;
+        }
+        
+        .back-link {
+            text-align: center;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .back-link a {
+            color: #e74c3c;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .back-link a:hover {
+            color: #c0392b;
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .login-container {
+                max-width: 100%;
+                padding: 40px 25px;
+                border-width: 2px;
+            }
+            
+            .login-header h1 {
+                font-size: 2em;
+            }
+            
+            .login-header p {
+                font-size: 1em;
+            }
+            
+            .lock-icon {
+                font-size: 60px;
+            }
+            
+            .form-group input {
+                font-size: 16px; /* Évite le zoom automatique sur iOS */
+            }
+            
+            .btn-login {
+                font-size: 16px;
+                padding: 14px;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .login-container {
+                padding: 30px 20px;
+            }
+            
+            .login-header h1 {
+                font-size: 1.8em;
+            }
+            
+            .lock-icon {
+                font-size: 50px;
+                margin-bottom: 15px;
+            }
+            
+            .form-group {
+                margin-bottom: 15px;
+            }
+            
+            .form-group input {
+                padding: 12px 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <div class="lock-icon">🔐</div>
+            <h1>Espace Admin</h1>
+            <p>Connectez-vous pour accéder au dashboard</p>
+        </div>
+        
+        <div id="errorMessage" class="error-message">
+            Identifiant ou mot de passe incorrect
+        </div>
+        
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Email</label>
+                <input type="email" id="username" name="username" placeholder="admin@exemple.com" required autofocus>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Mot de passe</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            
+            <button type="submit" class="btn-login">Se connecter</button>
+        </form>
+        
+        <div class="back-link">
+            <a href="index.html">← Retour à l'accueil</a>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    
+    <!-- Configuration Firebase -->
+    <script src="js/firebase-config.js"></script>
+    
+    <script>
+        // Animation de secousse
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                25% { transform: translateX(-10px); }
+                75% { transform: translateX(10px); }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Authentification Firebase
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('errorMessage');
+            const btnLogin = document.querySelector('.btn-login');
+            
+            // Désactiver le bouton pendant la connexion
+            btnLogin.disabled = true;
+            btnLogin.textContent = 'Connexion...';
+            
+            try {
+                // Se connecter avec Firebase Authentication
+                await firebase.auth().signInWithEmailAndPassword(email, password);
+                
+                // Succès - Redirection automatique par onAuthStateChanged
+                
+            } catch (error) {
+                console.error('Erreur de connexion:', error);
+                
+                // Afficher l'erreur appropriée
+                if (error.code === 'auth/invalid-email') {
+                    errorMessage.textContent = 'Format d\'email invalide';
+                } else if (error.code === 'auth/user-not-found') {
+                    errorMessage.textContent = 'Utilisateur non trouvé';
+                } else if (error.code === 'auth/wrong-password') {
+                    errorMessage.textContent = 'Mot de passe incorrect';
+                } else if (error.code === 'auth/invalid-credential') {
+                    errorMessage.textContent = 'Identifiants invalides';
+                } else {
+                    errorMessage.textContent = 'Erreur de connexion. Réessayez.';
+                }
+                
+                errorMessage.style.display = 'block';
+                
+                // Secouer le formulaire
+                document.querySelector('.login-container').style.animation = 'shake 0.5s';
+                setTimeout(() => {
+                    document.querySelector('.login-container').style.animation = '';
+                }, 500);
+                
+                // Masquer l'erreur après 4 secondes
+                setTimeout(() => {
+                    errorMessage.style.display = 'none';
+                }, 4000);
+                
+                // Réactiver le bouton
+                btnLogin.disabled = false;
+                btnLogin.textContent = 'Se connecter';
+            }
+        });
+        
+        // Vérifier si déjà connecté
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+                // L'utilisateur est connecté, rediriger vers le dashboard
+                window.location.href = 'admin-commandes.html';
+            }
+        });
+    </script>
+</body>
+</html>
