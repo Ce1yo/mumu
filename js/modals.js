@@ -214,7 +214,7 @@ const productsData = {
         title: 'Machine de table MT 150',
         price: '2 100,00 € HT',
         image: 'images/Machines a glaces/comptoir.png',
-        description: 'Machine à glace italienne sur comptoir, idéale pour les espaces restreints. Débit de 100 à 150 glaces/heure.',
+        description: 'Machine de table compacte sur roulettes pour un déplacement facile. Idéale pour les petits espaces. Production de 100 à 150 glaces/heure. 2 parfums + 1 mélange. Puissance 750W en 220V. Dimensions compactes : 75x55x93cm, poids 100-130kg. 2 réservoirs inox de 7.5L. Commandes mécaniques simples (4 touches : production, nettoyage, stop, reset). Très fiable, très peu d\'électronique, très peu de pannes. Première production en 10 minutes. Mode conservation économique (70W). Foisonnement naturel 10-30%. Nettoyage rapide < 20min. Gaz écolo R290. Contact : 06 86 18 07 68 - Mumu la marchande de glaces',
         specs: [
             { name: 'Type', value: 'Sur comptoir MT' },
             { name: 'Débit', value: '100-150 glaces/heure' },
@@ -227,7 +227,7 @@ const productsData = {
         title: 'Machine debout MD 150',
         price: '2 200,00 € HT',
         image: 'images/Machines a glaces/debout.png',
-        description: 'Machine sur roulettes, 2 parfums + 1 mélange. 2 compresseurs indépendants. Commandes mécaniques simples (4 touches). Première production en 10 minutes. Arrêt automatique économique. Nettoyage rapide < 20 min.',
+        description: 'Machine debout sur roulettes pour un déplacement facile. Production 150 glaces/heure. 2 parfums + 1 mélange. Puissance 1.6-2.0kW en 220V 50Hz. Dimensions : 75x55x133cm, poids 135-160kg. 2 réservoirs inox 7.5L + 2 cylindres 1.5L (17L total). 2 compresseurs et 2 moteurs entièrement indépendants. Commandes mécaniques ultra-fiables (4 touches simples). Réglage dureté par potentiomètre. Très rapide : première production en 10 minutes. Très économique : arrêt automatique, redémarrage toutes les 7min pour 1min de froid. Mode conservation 70W. Foisonnement naturel 10-30%. Nettoyage < 20min. Gaz écolo R290 avec gros condensateur 1k350. Contact : 06 86 18 07 68 - Mumu la marchande de glaces',
         specs: [
             { name: 'Type', value: 'Sur pieds MD' },
             { name: 'Débit', value: '150 glaces/heure' },
@@ -245,7 +245,7 @@ const productsData = {
         title: 'Machine de table MT 200',
         price: '2 200,00 € HT',
         image: 'images/Machines a glaces/comptoir.png',
-        description: 'Solution économique avec un débit de 150 à 200 glaces/heure. Idéale pour les petits espaces et les débutants.',
+        description: 'Machine de table compacte sur roulettes. Production améliorée 150-200 glaces/heure. 2 parfums + 1 mélange. Puissance 800W en 220V. Format compact idéal pour petits espaces : 75x55x93cm, poids 100-130kg. 2 réservoirs inox de 7.5L. Commandes mécaniques simples et fiables (4 touches). Très économique en consommation. Première production en 10 minutes. Mode conservation économique (70W). Foisonnement naturel 10-30%. Nettoyage rapide < 20min. Gaz écolo R290. Solution parfaite pour démarrer. Contact : 06 86 18 07 68 - Mumu la marchande de glaces',
         specs: [
             { name: 'Type', value: 'Sur comptoir MT' },
             { name: 'Débit', value: '150-200 glaces/heure' },
@@ -258,7 +258,7 @@ const productsData = {
         title: 'Machine debout MD 200',
         price: '2 300,00 € HT',
         image: 'images/Machines a glaces/debout.png',
-        description: 'Machine sur roulettes, 2 parfums + 1 mélange. 2 compresseurs indépendants. Commandes mécaniques simples (4 touches). Première production en 10 minutes. Arrêt automatique économique. Nettoyage rapide < 20 min.',
+        description: 'Machine debout professionnelle sur roulettes. Production intensive 200 glaces/heure. 2 parfums + 1 mélange. Puissance 1.6-2.0kW en 220V 50Hz. Dimensions : 75x55x133cm, poids 135-160kg. 2 réservoirs inox 7.5L + 2 cylindres 1.5L (17L total). 2 compresseurs et 2 moteurs entièrement indépendants. Très robuste avec commandes mécaniques (4 touches). Réglage précis de la dureté par potentiomètre. Ultra-rapide : 10 minutes première production. Système économique intelligent : arrêts/redémarrages automatiques. Mode conservation 70W. Foisonnement naturel 10-30% pour glace onctueuse. Nettoyage < 20min. Gaz R290 écolo, gros condensateur 1k350 pour production rapide même en forte chaleur. Contact : 06 86 18 07 68 - Mumu la marchande de glaces',
         specs: [
             { name: 'Type', value: 'Sur pieds MD' },
             { name: 'Débit', value: '200 glaces/heure' },
@@ -276,7 +276,7 @@ const productsData = {
         title: 'Machine debout MD25-300',
         price: '2 400,00 € HT',
         image: 'images/Machines a glaces/debout.png',
-        description: 'Machine sur roulettes, 2 parfums + 1 mélange. 2 compresseurs indépendants. Commandes mécaniques simples (4 touches). Première production en 10 minutes. Arrêt automatique économique. Nettoyage rapide < 20 min.',
+        description: 'Machine debout haute performance sur roulettes. Production professionnelle 300 glaces/heure. 2 parfums + 1 mélange. Puissance renforcée 2.4kW en 220V 50Hz. Dimensions : 75x55x133cm, poids 135-160kg. 2 réservoirs inox 7.5L + 2 cylindres 1.5L (17L total). 2 compresseurs puissants et 2 moteurs entièrement indépendants. Commandes mécaniques ultra-fiables (4 touches). Réglage dureté par potentiomètre. Production express : 10 minutes. Gestion économique intelligente : arrêts/redémarrages automatiques toutes les 7min. Mode conservation 70W. Foisonnement naturel 10-30%. Nettoyage < 20min. Gaz R290 écolo, très gros condensateur 1k350 pour service rapide en forte affluence. Idéale pour événements et forte fréquentation. Contact : 06 86 18 07 68 - Mumu la marchande de glaces',
         specs: [
             { name: 'Type', value: 'Sur pieds MD25' },
             { name: 'Débit', value: '300 glaces/heure' },
@@ -294,7 +294,7 @@ const productsData = {
         title: 'Machine debout à pompe MDP 300',
         price: '2 600,00 € HT',
         image: 'images/Machines a glaces/debout.png',
-        description: 'Machine sur roulettes avec pompe de foisonnement, 2 parfums + 1 mélange. 2 compresseurs indépendants. Commandes mécaniques simples (4 touches). Première production en 10 minutes. Arrêt automatique économique. Nettoyage rapide < 20 min.',
+        description: 'Machine debout PREMIUM avec pompe de foisonnement sur roulettes. Production professionnelle 300 glaces/heure. 2 parfums + 1 mélange. Puissance 2.4kW en 220V 50Hz. Dimensions : 75x55x133cm, poids 135-160kg. 2 réservoirs inox 7.5L + 2 cylindres 1.5L (17L total). Pompe de foisonnement intégrée pour qualité exceptionnelle. 2 compresseurs puissants et 2 moteurs entièrement indépendants. Commandes mécaniques ultra-fiables (4 touches). Réglage dureté par potentiomètre. Production express : 10 minutes. Gestion économique intelligente. Mode conservation 70W. Foisonnement PREMIUM 65%+ avec pompe pour glace ultra-onctueuse et texture exceptionnelle. Nettoyage < 20min. Gaz R290 écolo, très gros condensateur 1k350. Qualité artisanale professionnelle. Contact : 06 86 18 07 68 - Mumu la marchande de glaces',
         specs: [
             { name: 'Type', value: 'Sur pieds MDP (avec pompe)' },
             { name: 'Débit', value: '300 glaces/heure' },
@@ -312,7 +312,7 @@ const productsData = {
         title: 'Machine debout à pompe MDP 400',
         price: '2 700,00 € HT',
         image: 'images/Machines a glaces/debout.png',
-        description: 'Machine sur roulettes avec pompe de foisonnement, 2 parfums + 1 mélange. 2 compresseurs indépendants. Commandes mécaniques simples (4 touches). Première production en 10 minutes. Arrêt automatique économique. Nettoyage rapide < 20 min.',
+        description: 'Machine debout TOP GAMME avec pompe de foisonnement sur roulettes. Production intensive 400 glaces/heure. 2 parfums + 1 mélange. Puissance maximale 2.4kW en 220V 50Hz. Dimensions : 75x55x133cm, poids 135-160kg. 2 réservoirs inox 7.5L + 2 cylindres 1.5L (17L total). Pompe de foisonnement professionnelle intégrée. Double système : 2 compresseurs puissants et 2 moteurs entièrement indépendants. Commandes mécaniques ultra-fiables (4 touches). Réglage précis dureté par potentiomètre. Production ultra-rapide : 10 minutes. Gestion intelligente économique. Mode conservation 70W. Foisonnement EXCEPTIONNEL 65%+ avec pompe pour qualité artisanale supérieure et texture incomparable. Nettoyage < 20min. Gaz R290 écolo, très gros condensateur 1k350 pour production continue. Le top pour professionnels exigeants. Contact : 06 86 18 07 68 - Mumu la marchande de glaces',
         specs: [
             { name: 'Type', value: 'Sur pieds MDP (avec pompe)' },
             { name: 'Débit', value: '400 glaces/heure' },
@@ -330,7 +330,7 @@ const productsData = {
         title: 'Machine debout MD25-400',
         price: '2 500,00 € HT',
         image: 'images/Machines a glaces/debout.png',
-        description: 'Machine sur roulettes, 2 parfums + 1 mélange. 2 compresseurs indépendants. Commandes mécaniques simples (4 touches). Première production en 10 minutes. Arrêt automatique économique. Nettoyage rapide < 20 min.',
+        description: 'Machine debout très haute performance sur roulettes. Production intensive 400 glaces/heure. 2 parfums + 1 mélange. Puissance maximale 2.4kW en 220V 50Hz. Dimensions : 75x55x133cm, poids 135-160kg. 2 réservoirs inox 7.5L + 2 cylindres 1.5L (17L total). Double système : 2 compresseurs puissants et 2 moteurs entièrement indépendants. Commandes mécaniques ultra-fiables (4 touches). Réglage précis dureté par potentiomètre. Production ultra-rapide : 10 minutes. Gestion intelligente économique. Mode conservation 70W. Foisonnement naturel 10-30%. Nettoyage < 20min. Gaz R290 écolo, très gros condensateur 1k350 pour production continue même en forte chaleur. Top performance pour forte affluence et événements majeurs. Contact : 06 86 18 07 68 - Mumu la marchande de glaces',
         specs: [
             { name: 'Type', value: 'Sur pieds MD25' },
             { name: 'Débit', value: '400 glaces/heure' },
