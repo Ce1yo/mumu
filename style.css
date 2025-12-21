@@ -279,28 +279,66 @@ nav .cart-icon-container {
     border-bottom: 1px dashed #ddd;
 }
 
-/* Style des boutons Découvrir */
+/* Conteneur des boutons */
+.card-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: auto;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Style spécifique pour les pages de machines */
+.machines-page .card-buttons {
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Style spécifique pour les autres pages */
+.products-page .card-buttons {
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Boutons de la carte */
 .menu-item .btn {
-    display: inline-block;
-    padding: 10px 25px;
-    margin: 0 15px 20px;
-    background-color: var(--accent-color);
+    flex: 1;
+    min-width: 120px;
+    padding: 10px 15px;
+    background-color: #e63946;
     color: white;
     text-decoration: none;
     border-radius: 25px;
-    font-weight: bold;
+    font-weight: 600;
     text-transform: uppercase;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
     transition: all 0.3s ease;
-    border: 2px solid var(--accent-color);
+    border: 2px solid #e63946;
+    text-align: center;
+    display: inline-block;
 }
 
 .menu-item .btn:hover {
     background-color: transparent;
-    color: var(--accent-color);
+    color: #e63946;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(230, 57, 70, 0.3);
+}
+
+/* Style spécifique pour le bouton ajouter au panier */
+.menu-item .btn-cart {
+    background-color: #457b9d;
+    border-color: #457b9d;
+    color: white;
+}
+
+.menu-item .btn-cart:hover {
+    background-color: transparent;
+    color: #457b9d;
+    box-shadow: 0 5px 15px rgba(69, 123, 157, 0.3);
 }
 
 .menu-item:hover {
@@ -552,6 +590,174 @@ footer {
     right: 10px;
     border-left: none;
     border-top: none;
+}
+
+/* Styles pour la modale de détails */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 800px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    background: none;
+    border: none;
+    font-weight: bold;
+}
+
+.modal-close:hover {
+    color: #e63946;
+}
+
+.modal-header {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-header h2 {
+    color: #e63946;
+    margin: 0 0 10px 0;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.modal-image {
+    width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.modal-specs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.spec-item {
+    background-color: #f9f9f9;
+    padding: 12px 15px;
+    border-radius: 6px;
+    border-left: 4px solid #e63946;
+}
+
+.spec-item strong {
+    display: block;
+    color: #333;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+.spec-item span {
+    color: #666;
+    font-size: 0.95em;
+}
+
+.modal-description {
+    line-height: 1.6;
+    color: #444;
+    margin: 10px 0;
+}
+
+.modal-price {
+    font-size: 1.5em;
+    color: #e63946;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.modal-actions .btn {
+    flex: 1;
+    min-width: 150px;
+    text-align: center;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    border: 2px solid;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-actions .btn-cart {
+    background-color: #457b9d;
+    border-color: #457b9d;
+    color: white;
+}
+
+.modal-actions .btn-cart:hover {
+    background-color: transparent;
+    color: #457b9d;
+    box-shadow: 0 5px 15px rgba(69, 123, 157, 0.3);
+}
+
+.modal-actions .btn:not(.btn-cart) {
+    background-color: #e63946;
+    border-color: #e63946;
+    color: white;
+}
+
+.modal-actions .btn:not(.btn-cart):hover {
+    background-color: transparent;
+    color: #e63946;
+    box-shadow: 0 5px 15px rgba(230, 57, 70, 0.3);
+}
+
+.modal-additional-info {
+    line-height: 1.6;
+    color: #444;
+    margin-top: 20px;
 }
 
 /* Cacher les chats sur mobile */

@@ -346,20 +346,26 @@ const productsData = {
     },
     'machine-granite-pro': {
         title: 'Machine à Granité Professionnelle',
-        price: '1 800 €',
+        price: '1 800,00 € HT',
         image: 'images/Machines a granite/granite.png',
-        description: 'Machine à granité professionnelle de haute qualité, idéale pour les bars, restaurants et événements. Production rapide et constante de granité parfaitement granuleux.',
+        description: 'Machine à granités professionnelle (machine à cocktails) simple d\'utilisation et pratique. Très peu d\'électronique, très peu de pannes. Commandes manuelles pour une fiabilité maximale. 3 bacs indépendants utilisables séparément ou ensemble. Production ultra-rapide : 35 à 45 minutes pour produire 36 litres (3x12L) contre plus de 2 heures pour les autres machines. Conçue pour supporter des chaleurs intenses grâce à de gros compresseurs puissants et rapides avec gaz R290 écologique.',
         specs: [
-            { name: 'Type', value: 'Professionnelle' },
-            { name: 'Capacité', value: '3 bacs de 8 litres' },
-            { name: 'Puissance', value: '0,9 kW' },
-            { name: 'Dimensions', value: '45 x 65 x 140 cm' },
-            { name: 'Poids', value: '55 kg' },
-            { name: 'Alimentation', value: '220-240V / 50Hz' },
-            { name: 'Garantie', value: '1 ans' },
-            { name: 'Production', value: 'Jusqu\'à 60 verres/heure' },
-            { name: 'Matériau', value: 'Acier inoxydable' },
-            { name: 'Fonctionnalités', value: 'Régulation de température, affichage numérique, système de nettoyage intégré' }
+            { name: 'Type', value: 'Professionnelle - 3 bacs indépendants' },
+            { name: 'Capacité', value: '3 bacs de 12 litres (36L total)' },
+            { name: 'Production', value: '35-45 min pour 36L (vs 2h+ autres machines)' },
+            { name: 'Moteurs', value: '3 moteurs indépendants' },
+            { name: 'Commandes', value: '3 commandes individuelles manuelles' },
+            { name: 'Réglages', value: '1 réglage de dureté par bac + 1 commande givre par bac' },
+            { name: 'Couvercle', value: 'Lumineux à LEDs' },
+            { name: 'Dimensions', value: '60 x 57 x 76 cm' },
+            { name: 'Poids', value: '61 kg' },
+            { name: 'Puissance', value: '1100W (1,1 kW)' },
+            { name: 'Courant', value: '5 Ampères' },
+            { name: 'Alimentation', value: '220V' },
+            { name: 'Gaz réfrigérant', value: 'R290 écologique' },
+            { name: 'Compresseurs', value: 'Gros compresseurs puissants pour chaleurs intenses' },
+            { name: 'Fiabilité', value: 'Très peu d\'électronique - Très peu de pannes' },
+            { name: 'Pièces détachées', value: 'Toutes pièces et joints disponibles' }
         ]
     },
     'machine-pieds': {
@@ -1116,8 +1122,6 @@ const productsData = {
 document.addEventListener('DOMContentLoaded', function() {
     // Gestion de la modale
     const modal = document.getElementById('productModal');
-    if (!modal) return;
-    
     const closeButton = document.getElementById('closeModal');
     const modalTitle = document.getElementById('modalProductTitle');
     const modalPrice = document.getElementById('modalProductPrice');
@@ -1133,11 +1137,19 @@ document.addEventListener('DOMContentLoaded', function() {
         const product = productsData[productId];
         if (!product) return;
 
-        modalTitle.textContent = product.title;
-        modalPrice.textContent = product.price;
-        modalImage.src = product.image;
-        modalImage.alt = product.title;
-        modalDescription.textContent = product.description;
+        // Si la modal n'existe pas sur cette page, ne rien faire
+        if (!modal) {
+            console.warn('Modal #productModal non trouvée sur cette page pour le produit:', productId);
+            return;
+        }
+
+        if (modalTitle) modalTitle.textContent = product.title;
+        if (modalPrice) modalPrice.textContent = product.price;
+        if (modalImage) {
+            modalImage.src = product.image;
+            modalImage.alt = product.title;
+        }
+        if (modalDescription) modalDescription.textContent = product.description;
         
         // Gestion des informations supplémentaires
         if (modalAdditionalInfo) {
@@ -1214,27 +1226,31 @@ document.addEventListener('DOMContentLoaded', function() {
         modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
     }
+    
     // Fermer la modale
     function closeModal() {
+        if (!modal) return;
         modal.style.display = 'none';
         document.body.style.overflow = 'auto';
     }
 
-    // Événements
-    if (closeButton) {
-        closeButton.addEventListener('click', closeModal);
+    // Événements de fermeture (seulement si la modal existe)
+    if (modal) {
+        if (closeButton) {
+            closeButton.addEventListener('click', closeModal);
+        }
+        
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        // Fermer avec la touche Échap
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
     }
-    
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) closeModal();
-    });
 
-    // Fermer avec la touche Échap
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closeModal();
-    });
-
-    // Configurer les boutons "En savoir plus"
+    // Configurer les boutons "En savoir plus" (TOUJOURS, même si modal n'existe pas)
     document.querySelectorAll('.btn:not(.btn-cart)').forEach(button => {
         if (button.textContent.trim() === 'En savoir plus') {
             button.addEventListener('click', (e) => {
@@ -1242,8 +1258,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 const card = button.closest('.menu-item');
                 if (card) {
                     const productId = card.dataset.productId;
-                    if (productId) {
-                        openProductModal(productId);
+                    if (productId && window.openProductModal) {
+                        window.openProductModal(productId);
                     }
                 }
             });
