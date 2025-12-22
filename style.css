@@ -760,31 +760,299 @@ footer {
     margin-top: 20px;
 }
 
-/* Cacher les chats sur mobile */
+/* Tablette - Paysage */
 @media (max-width: 1024px) {
     .cat-decoration {
         display: none;
     }
+    
+    body {
+        padding: 15px;
+    }
+    
+    .vintage-border {
+        border-width: 10px;
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .menu-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 25px;
+    }
 }
 
+/* Tablette - Portrait */
 @media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .vintage-border {
+        border-width: 8px;
+        padding: 10px;
+        box-shadow: 0 0 0 3px var(--accent-color), 0 0 15px rgba(0,0,0,0.2);
+    }
+    
     h1 {
         font-size: 2rem;
+        letter-spacing: 1px;
     }
     
     .subtitle {
         font-size: 1.2rem;
     }
     
+    header {
+        padding: 15px 0;
+        margin-bottom: 15px;
+    }
+    
+    nav ul {
+        gap: 10px;
+    }
+    
     nav ul li {
-        margin: 5px 10px;
+        margin: 5px 8px;
+    }
+    
+    nav ul li a {
+        font-size: 1rem;
+        padding: 5px 8px;
+    }
+    
+    .hero {
+        min-height: 50vh;
     }
     
     .hero h2 {
         font-size: 1.8rem;
     }
     
+    .hero p {
+        font-size: 1.4rem;
+    }
+    
+    .menu-section {
+        margin-bottom: 35px;
+    }
+    
+    .menu-section h2 {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+    }
+    
+    .menu-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        padding: 0 10px;
+    }
+    
+    .card-image {
+        height: 220px;
+    }
+    
+    .menu-item h3 {
+        font-size: 1.2rem;
+    }
+    
+    .menu-item .price {
+        font-size: 1.2rem;
+    }
+    
+    .modal-content {
+        padding: 20px;
+        max-height: 85vh;
+    }
+    
+    .modal-specs {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 15px 20px;
+    }
+}
+
+/* Mobile - Paysage */
+@media (max-width: 576px) {
+    body {
+        padding: 5px;
+    }
+    
+    .vintage-border {
+        border-width: 5px;
+        padding: 8px;
+    }
+    
+    h1 {
+        font-size: 1.6rem;
+        letter-spacing: 0.5px;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    header {
+        padding: 10px 0;
+        margin-bottom: 10px;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+    
+    nav ul li {
+        margin: 3px 0;
+    }
+    
+    nav ul li a {
+        font-size: 0.9rem;
+    }
+    
+    .hero {
+        min-height: 40vh;
+    }
+    
+    .hero h2 {
+        font-size: 1.4rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+    }
+    
+    .menu-section {
+        margin-bottom: 25px;
+    }
+    
+    .menu-section h2 {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+        padding: 0 10px;
+    }
+    
     .menu-grid {
         grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 0 5px;
+    }
+    
+    .card-image {
+        height: 180px;
+        padding: 10px;
+    }
+    
+    .menu-item h3 {
+        font-size: 1.1rem;
+        margin: 10px 0 8px;
+    }
+    
+    .menu-item p {
+        font-size: 0.9rem;
+    }
+    
+    .menu-item .price {
+        font-size: 1.1rem;
+        padding: 0 10px 10px;
+    }
+    
+    .menu-item .btn {
+        font-size: 0.75rem;
+        padding: 8px 12px;
+        min-width: 100px;
+    }
+    
+    .card-buttons {
+        gap: 8px;
+        padding: 0 10px 10px;
+    }
+    
+    .modal-content {
+        padding: 15px;
+        border-radius: 8px;
+    }
+    
+    .modal-close {
+        font-size: 20px;
+        top: 10px;
+        right: 10px;
+    }
+    
+    .modal-header h2 {
+        font-size: 1.3rem;
+    }
+    
+    .modal-price {
+        font-size: 1.3em;
+    }
+    
+    .modal-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .modal-actions .btn {
+        width: 100%;
+        min-width: unset;
+    }
+    
+    .contact-container {
+        padding: 10px;
+    }
+    
+    .contact-card {
+        padding: 15px;
+    }
+    
+    .contact-form {
+        padding: 15px;
+    }
+    
+    .footer-content {
+        padding: 0 10px 15px;
+    }
+    
+    .footer-section h3 {
+        font-size: 1.1rem;
+    }
+}
+
+/* Très petits écrans */
+@media (max-width: 360px) {
+    h1 {
+        font-size: 1.4rem;
+    }
+    
+    .subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.2rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .menu-section h2 {
+        font-size: 1.2rem;
+    }
+    
+    .menu-item h3 {
+        font-size: 1rem;
+    }
+    
+    .card-image {
+        height: 150px;
     }
 }

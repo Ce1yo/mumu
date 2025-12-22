@@ -91,19 +91,99 @@
     color: #333;
 }
 
+/* Tablette - Portrait */
 @media (max-width: 768px) {
+    .cookie-consent {
+        padding: 18px;
+    }
+    
     .cookie-content {
         flex-direction: column;
         text-align: center;
+        gap: 15px;
+    }
+    
+    .cookie-text {
+        min-width: 250px;
+    }
+    
+    .cookie-text h3 {
+        font-size: 1.3em;
+        margin: 0 0 8px 0;
+    }
+    
+    .cookie-text p {
+        font-size: 0.9em;
     }
     
     .cookie-buttons {
         width: 100%;
         justify-content: center;
+        gap: 12px;
     }
     
     .cookie-btn {
         flex: 1;
         min-width: 120px;
+        padding: 11px 25px;
+        font-size: 0.95em;
+    }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+    .cookie-consent {
+        padding: 15px;
+    }
+    
+    .cookie-content {
+        gap: 12px;
+    }
+    
+    .cookie-text {
+        min-width: 200px;
+    }
+    
+    .cookie-text h3 {
+        font-size: 1.2em;
+        margin: 0 0 6px 0;
+    }
+    
+    .cookie-text p {
+        font-size: 0.85em;
+        line-height: 1.5;
+    }
+    
+    .cookie-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+    
+    .cookie-btn {
+        width: 100%;
+        min-width: unset;
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}
+
+/* Très petits écrans */
+@media (max-width: 360px) {
+    .cookie-consent {
+        padding: 12px;
+    }
+    
+    .cookie-text h3 {
+        font-size: 1.1em;
+    }
+    
+    .cookie-text p {
+        font-size: 0.8em;
+    }
+    
+    .cookie-btn {
+        padding: 9px 15px;
+        font-size: 0.85em;
     }
 }

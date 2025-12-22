@@ -214,13 +214,18 @@ const productsData = {
         title: 'Machine de table MT 150',
         price: '2 100,00 € HT',
         image: 'images/Machines a glaces/comptoir.png',
-        description: 'Machine de table compacte sur roulettes pour un déplacement facile. Idéale pour les petits espaces. Production de 100 à 150 glaces/heure. 2 parfums + 1 mélange. Puissance 750W en 220V. Dimensions compactes : 75x55x93cm, poids 100-130kg. 2 réservoirs inox de 7.5L. Commandes mécaniques simples (4 touches : production, nettoyage, stop, reset). Très fiable, très peu d\'électronique, très peu de pannes. Première production en 10 minutes. Mode conservation économique (70W). Foisonnement naturel 10-30%. Nettoyage rapide < 20min. Gaz écolo R290. Contact : 06 86 18 07 68 - Mumu la marchande de glaces',
+        description: 'Machine de table compacte sur roulettes pour un déplacement facile. Idéale pour les petits espaces. Production de 100 à 150 glaces/heure. 2 parfums + 1 mélange. Puissance 1600-2000W en 220V 50Hz. Dimensions compactes : 75x55x93cm, poids 100-130kg. 2 réservoirs bacs en inox de 7.5L chacun + 2 cylindres producteur de 1.5L (17L total). 2 compresseurs et 2 moteurs entièrement indépendants. Commandes mécaniques simples (4 touches : production, nettoyage, stop, reset). Très fiable, très peu d\'électronique, très peu de pannes. Réglage de la dureté par bouton potentiomètre. Première production en 10 minutes. Très économique : elle ne tourne pas 24h en continu, arrêt automatique, redémarrage toutes les 7min pour 1min de froid. Mode conservation économique (70W). Foisonnement naturel 10-30%. Nettoyage rapide < 20min. Gaz écolo R290 avec gros condensateur 1k350. Contact : 06 86 18 07 68 - Mumu la marchande de glaces',
         specs: [
             { name: 'Type', value: 'Sur comptoir MT' },
             { name: 'Débit', value: '100-150 glaces/heure' },
-            { name: 'Puissance', value: '0,75 kW' },
+            { name: 'Puissance', value: '1,6-2,0 kW' },
+            { name: 'Alimentation', value: '220V 50Hz' },
             { name: 'Dimensions', value: '75 x 55 x 93 cm' },
-            { name: 'Poids', value: '100-130 kg' }
+            { name: 'Poids', value: '100-130 kg' },
+            { name: 'Réservoirs', value: '2 x 7,5L (inox)' },
+            { name: 'Cylindres', value: '2 x 1,5L' },
+            { name: 'Gaz', value: 'R290 écolo' },
+            { name: 'Foisonnement', value: '10-30%' }
         ]
     },
     'machine-pieds': {
@@ -245,13 +250,18 @@ const productsData = {
         title: 'Machine de table MT 200',
         price: '2 200,00 € HT',
         image: 'images/Machines a glaces/comptoir.png',
-        description: 'Machine de table compacte sur roulettes. Production améliorée 150-200 glaces/heure. 2 parfums + 1 mélange. Puissance 800W en 220V. Format compact idéal pour petits espaces : 75x55x93cm, poids 100-130kg. 2 réservoirs inox de 7.5L. Commandes mécaniques simples et fiables (4 touches). Très économique en consommation. Première production en 10 minutes. Mode conservation économique (70W). Foisonnement naturel 10-30%. Nettoyage rapide < 20min. Gaz écolo R290. Solution parfaite pour démarrer. Contact : 06 86 18 07 68 - Mumu la marchande de glaces',
+        description: 'Machine de table compacte sur roulettes. Production améliorée 150-200 glaces/heure. 2 parfums + 1 mélange. Puissance 1600-2000W en 220V 50Hz. Format compact idéal pour petits espaces : 75x55x93cm, poids 100-130kg. 2 réservoirs bacs en inox de 7.5L chacun + 2 cylindres producteur de 1.5L (17L total). 2 compresseurs et 2 moteurs entièrement indépendants. Commandes mécaniques simples et fiables (4 touches : production, nettoyage, stop, reset). Réglage de la dureté par bouton potentiomètre. Première production en 10 minutes. Très économique : elle ne tourne pas 24h en continu, arrêt automatique, redémarrage toutes les 7min pour 1min de froid. Mode conservation économique (70W). Foisonnement naturel 10-30%. Nettoyage rapide < 20min. Gaz écolo R290 avec gros condensateur 1k350. Solution parfaite pour démarrer. Contact : 06 86 18 07 68 - Mumu la marchande de glaces',
         specs: [
             { name: 'Type', value: 'Sur comptoir MT' },
             { name: 'Débit', value: '150-200 glaces/heure' },
-            { name: 'Puissance', value: '0,8 kW' },
+            { name: 'Puissance', value: '1,6-2,0 kW' },
+            { name: 'Alimentation', value: '220V 50Hz' },
             { name: 'Dimensions', value: '75 x 55 x 93 cm' },
-            { name: 'Poids', value: '100-130 kg' }
+            { name: 'Poids', value: '100-130 kg' },
+            { name: 'Réservoirs', value: '2 x 7,5L (inox)' },
+            { name: 'Cylindres', value: '2 x 1,5L' },
+            { name: 'Gaz', value: 'R290 écolo' },
+            { name: 'Foisonnement', value: '10-30%' }
         ]
     },
     'machine-professionnelle': {
@@ -346,7 +356,7 @@ const productsData = {
     },
     'machine-granite-pro': {
         title: 'Machine à Granité Professionnelle',
-        price: '1 800,00 € HT',
+        price: '1 900,00 € HT',
         image: 'images/Machines a granite/granite.png',
         description: 'Magnifique machine à granité 3 bacs de 12 litres, un véritable avion de chasse par sa rapidité de mise en glaces. Mumu la marchande de glaces vous propose des machines à granités professionnels (machines à cocktails) simple d\'utilisation pratique d\'emplois très peu d\'électroniques très peu de pannes commandes manuels vous pouvez utiliser et commander de 1 ou 2 ou 3 bacs vous finissez un bac vous pouvez utiliser les 2 autres 3 moteurs 3 commandes individuelles 1 réglage de dureté par bac une commande de givre par bac couvercle lumineux à leds très rapide en production de 35 à 45 minutes pour faire 3 fois 12 litres d\'un coup 36 litres de produits à comparer des autres machines où il vous faut plus de 2 heures de fabrications conçus pour des chaleurs intenses très gros compresseurs puissant et rapide avec le gaz r 290 écolo. Largeur 60cm hauteur 76cm profondeur 57 cm pour 61 kg 1100watts 5 ampères 220volts. Je dispose de toutes les pièces détachées et de tous les joints de maintenances. Pour tout conseil et info me contacter.',
         specs: [
@@ -608,10 +618,9 @@ const productsData = {
     },
     'piece-10': {
         title: 'Cache Piston',
-        price: '? €',
+        price: '4,50 € HT',
         image: 'images/pieces granite/10g cache piston granité.png',
         description: 'Cache de protection pour le piston de la machine à granité. Protège le mécanisme des projections.',
-        hideCartButton: true,
         specs: [
             { name: 'Matière', value: 'Plastique ABS' },
             { name: 'Couleur', value: 'Noir' },
@@ -658,10 +667,9 @@ const productsData = {
     },
     'piece-14': {
         title: 'Moteur de Granité',
-        price: '113,80 €',
+        price: '113,80 € HT',
         image: 'images/pieces granite/14g moteur granité.png',
         description: 'Moteur de remplacement pour machine à granité. Pièce essentielle pour le brassage des boissons.',
-        hideCartButton: true,
         specs: [
             { name: 'Puissance', value: '120 W' },
             { name: 'Tension', value: '220-240V' },
@@ -781,10 +789,9 @@ const productsData = {
     },
     'piece-ital-9': {
         title: 'Moteur Ventilateur 45W',
-        price: '46,50 €',
+        price: '46,50 € HT',
         image: 'images/pieces italiennes/20 moteur ventilateur 45 watts glace italienne.png',
         description: 'Ventilateur de refroidissement 45W pour machines à glaces italiennes. Assure un refroidissement optimal du moteur.',
-        hideCartButton: true,
         specs: [
             { name: 'Type', value: 'Ventilateur' },
             { name: 'Puissance', value: '45W' },
@@ -794,10 +801,9 @@ const productsData = {
     },
     'piece-ital-10': {
         title: 'Moteur Ventilateur 70W',
-        price: '49,50 €',
+        price: '49,50 € HT',
         image: 'images/pieces italiennes/21 moteur ventilateur 70 watts glace italienne.png',
         description: 'Ventilateur de refroidissement 70W haute performance pour machines à glaces italiennes professionnelles.',
-        hideCartButton: true,
         specs: [
             { name: 'Type', value: 'Ventilateur' },
             { name: 'Puissance', value: '70W' },
