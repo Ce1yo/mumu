@@ -378,34 +378,6 @@ const productsData = {
             { name: 'Pièces détachées', value: 'Toutes pièces et joints disponibles' }
         ]
     },
-    'machine-pieds': {
-        title: 'Machine sur Pieds MD 150',
-        price: '2 200,00 € HT',
-        image: 'images/Machines a glaces/debout.png',
-        description: 'Notre modèle sur pieds offre une grande capacité de production, idéal pour les établissements à fort trafic. Son système de refroidissement avancé assure des performances optimales même en période d\'affluence.',
-        specs: [
-            { name: 'Capacité', value: '4 parfums' },
-            { name: 'Puissance', value: '1.2 kW' },
-            { name: 'Dimensions', value: '75 x 55 x 133 cm' },
-            { name: 'Poids', value: '45 kg' },
-            { name: 'Alimentation', value: '220-240V / 50Hz' },
-            { name: 'Garantie', value: '1 ans' }
-        ]
-    },
-    'machine-economique': {
-        title: 'Machine de table MT 200',
-        price: '2 200,00 € HT',
-        image: 'images/Machines a glaces/comptoir.png',
-        description: 'Notre modèle économique parfait pour les petits budgets. Idéale pour les débutants ou les petits commerces qui démarrent.',
-        specs: [
-            { name: 'Capacité', value: '2 parfums' },
-            { name: 'Puissance', value: '0.5 kW' },
-            { name: 'Dimensions', value: '75 x 55 x 93 cm' },
-            { name: 'Poids', value: '20 kg' },
-            { name: 'Alimentation', value: '220-240V / 50Hz' },
-            { name: 'Garantie', value: '1 an' }
-        ]
-    },
     // Goûts de glace
     'glace-vanille': {
         title: 'Glace à la Vanille',
