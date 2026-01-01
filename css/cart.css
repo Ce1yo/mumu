@@ -153,8 +153,9 @@
 .cart-modal-body {
     padding: 20px 30px;
     overflow-y: auto;
-    flex: 1;
-    min-height: 200px;
+    flex: 1 1 auto;
+    min-height: 150px;
+    max-height: calc(90vh - 250px);
 }
 
 /* Message panier vide */
@@ -454,6 +455,11 @@ nav .cart-icon-container {
         border-width: 6px;
         border-radius: 6px;
     }
+    
+    .cart-modal-body {
+        max-height: calc(95vh - 300px);
+        padding: 15px 20px;
+    }
 
     .cart-item {
         grid-template-columns: 70px 1fr;
@@ -527,9 +533,42 @@ nav .cart-icon-container {
     
     .cart-modal-content {
         max-width: 100%;
-        max-height: 98vh;
+        max-height: 95vh;
         border-width: 5px;
         border-radius: 4px;
+    }
+    
+    .cart-modal-header {
+        padding: 15px 15px;
+    }
+    
+    .cart-modal-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .cart-modal-body {
+        padding: 15px;
+        max-height: calc(95vh - 280px);
+    }
+    
+    .cart-modal-footer {
+        padding: 15px;
+        flex-shrink: 0;
+    }
+    
+    .cart-total {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+    
+    .cart-total span:last-child {
+        font-size: 1.4rem;
+    }
+    
+    .delivery-note {
+        padding: 8px 12px;
+        margin-bottom: 12px;
+        font-size: 0.85rem;
     }
     
     .cart-item {
@@ -616,8 +655,46 @@ nav .cart-icon-container {
 
 /* Très petits écrans */
 @media (max-width: 360px) {
+    .cart-modal {
+        padding: 5px;
+    }
+    
     .cart-modal-content {
         border-width: 4px;
+        max-height: 96vh;
+    }
+    
+    .cart-modal-header {
+        padding: 12px 10px;
+    }
+    
+    .cart-modal-header h2 {
+        font-size: 1.3rem;
+    }
+    
+    .cart-modal-body {
+        padding: 10px;
+        max-height: calc(96vh - 250px);
+    }
+    
+    .cart-modal-footer {
+        padding: 12px 10px;
+        flex-shrink: 0;
+    }
+    
+    .cart-total {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+    
+    .cart-total span:last-child {
+        font-size: 1.3rem;
+    }
+    
+    .delivery-note {
+        padding: 6px 10px;
+        margin-bottom: 10px;
+        font-size: 0.8rem;
     }
     
     .cart-item {
@@ -656,5 +733,9 @@ nav .cart-icon-container {
     .cart-btn {
         padding: 8px 12px;
         font-size: 0.8rem;
+    }
+    
+    .cart-actions {
+        gap: 8px;
     }
 }
